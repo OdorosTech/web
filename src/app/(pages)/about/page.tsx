@@ -6,6 +6,7 @@ import {
   GlobalOutlined,
   SafetyOutlined,
 } from "@ant-design/icons";
+import PageHeader from "@/components/common/PageHeader";
 
 const { Title, Paragraph } = Typography;
 
@@ -37,9 +38,11 @@ export default function About() {
   return (
     <div style={{ padding: "80px 20px", marginTop: 64 }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <Title level={1} style={{ textAlign: "center", marginBottom: 60 }}>
-          About Odoros Technologies
-        </Title>
+        <PageHeader
+          badge=" 🌟 Our Story & Vision"
+          title="About Odoros Technologies"
+          description="Passionate about innovation and dedicated to your success"
+        />
 
         <Row gutter={[48, 48]} style={{ marginBottom: 80 }}>
           <Col xs={24} md={12}>

@@ -4,6 +4,7 @@ import { Typography, Row, Col, Card, Button } from "antd";
 import { EnvironmentOutlined, ClockCircleOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import { ContentItem, getContentByType } from "@/lib/content";
+import PageHeader from "@/components/common/PageHeader";
 
 const { Title, Paragraph } = Typography;
 
@@ -27,9 +28,11 @@ export default function Careers() {
   return (
     <div style={{ padding: "80px 20px", marginTop: 64 }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <Title level={1} style={{ textAlign: "center", marginBottom: 20 }}>
-          Join Our Team
-        </Title>
+        <PageHeader
+          badge="🚀 Careers at Odoros"
+          title="Join Our Team"
+          description="Be part of a team that's shaping the future of AI and data analytics"
+        />
         <Paragraph
           style={{
             textAlign: "center",
@@ -38,9 +41,7 @@ export default function Careers() {
             maxWidth: 800,
             margin: "0 auto 60px",
           }}
-        >
-          Be part of a team that's shaping the future of AI and data analytics
-        </Paragraph>
+        ></Paragraph>
 
         <Row gutter={[48, 48]} style={{ marginBottom: 80 }}>
           <Col xs={24} md={12}>

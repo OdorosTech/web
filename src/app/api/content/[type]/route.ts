@@ -1,47 +1,3 @@
-// import { NextResponse } from "next/server";
-// import fs from "fs";
-// import path from "path";
-// import matter from "gray-matter";
-
-// const contentDirectory = path.join(process.cwd(), "src/content");
-
-// export async function GET(
-//   request: Request,
-//   { params }: { params: Promise<{ type: string }> }
-// ) {
-//   const { type } = await params;
-
-//   if (!["services", "industries", "careers"].includes(type)) {
-//     return NextResponse.json({ error: "Invalid type" }, { status: 400 });
-//   }
-
-//   const typeDirectory = path.join(contentDirectory, type);
-
-//   if (!fs.existsSync(typeDirectory)) {
-//     return NextResponse.json([]);
-//   }
-
-//   const fileNames = fs.readdirSync(typeDirectory);
-//   const allContent = fileNames
-//     .filter((fileName) => fileName.endsWith(".md"))
-//     .map((fileName) => {
-//       const slug = fileName.replace(/\.md$/, "");
-//       const fullPath = path.join(typeDirectory, fileName);
-//       const fileContents = fs.readFileSync(fullPath, "utf8");
-//       const { data, content } = matter(fileContents);
-
-//       return {
-//         slug,
-//         content,
-//         ...data,
-//       };
-//     });
-
-//   const sorted = allContent.sort((a, b) => (a.order || 999) - (b.order || 999));
-
-//   return NextResponse.json(sorted);
-// }
-
 import { NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
@@ -55,8 +11,9 @@ const VALID_TYPES = new Set(["services", "industries", "careers"]);
 
 export async function GET(
   _request: Request,
-  { params }: { params: { type: string } }
+  context: { params: Promise<{ type: string }> }
 ) {
+  const params = await context.params; // await here
   const type = (params?.type ?? "").toLowerCase();
 
   if (!VALID_TYPES.has(type)) {

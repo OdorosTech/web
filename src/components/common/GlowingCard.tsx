@@ -39,20 +39,25 @@ export default function GlowingCard({
       onMouseLeave={onMouseLeave}
       style={{
         position: "relative",
-        background: colors.background.primary,
+        background:
+          theme === "dark"
+            ? "rgba(255, 255, 255, 0.05)" // subtle light tint for dark theme
+            : "rgba(255, 255, 255, 0.3)", // subtle white tint for light theme
         border: isHovered
           ? `1px solid ${color}40`
           : `1px solid ${colors.border.primary}`,
-        borderRadius: "12px",
+        borderRadius: "16px",
         padding: "32px",
         transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-        transform: isHovered ? "translateY(-8px)" : "translateY(0)",
+        transform: isHovered ? "translateY(-6px)" : "translateY(0)",
         boxShadow: isHovered
-          ? `0 12px 48px ${color}20, 0 0 0 1px ${color}10`
-          : colors.shadow.sm,
+          ? `0 8px 24px ${color}30` // softer, more transparent glow
+          : `0 4px 12px rgba(0,0,0,0.05)`, // subtle shadow when not hovered
         cursor: "pointer",
         animation: `fadeInUp 0.6s ease-out ${index * 0.1}s backwards`,
         overflow: "hidden",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
       }}
     >
       {/* Top gradient bar */}
@@ -66,7 +71,8 @@ export default function GlowingCard({
           background: gradient,
           opacity: isHovered ? 1 : 0,
           transition: "opacity 0.3s ease",
-          boxShadow: isHovered ? `0 0 20px ${color}60` : "none",
+          boxShadow: isHovered ? `0 0 12px ${color}50` : "none", // softer glow
+          borderRadius: "0 0 12px 12px",
         }}
       />
 
@@ -75,8 +81,8 @@ export default function GlowingCard({
         style={{
           width: "64px",
           height: "64px",
-          borderRadius: "12px",
-          background: isHovered ? gradient : `${color}10`,
+          borderRadius: "16px",
+          background: isHovered ? gradient : `${color}15`,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -84,17 +90,19 @@ export default function GlowingCard({
           marginBottom: "20px",
           transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
           transform: isHovered
-            ? "scale(1.1) rotate(5deg)"
+            ? "scale(1.05) rotate(3deg)"
             : "scale(1) rotate(0deg)",
           boxShadow: isHovered
-            ? `0 8px 24px ${color}40, 0 0 0 4px ${color}10`
+            ? `0 6px 16px ${color}30, 0 0 0 3px ${color}10`
             : "none",
           position: "relative",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
         }}
       >
         <span
           style={{
-            filter: isHovered ? "brightness(1.2)" : "none",
+            filter: isHovered ? "brightness(1.1)" : "none",
             transition: "filter 0.3s ease",
           }}
         >
@@ -110,6 +118,7 @@ export default function GlowingCard({
           color: colors.text.primary,
           marginBottom: "12px",
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto',
+          textShadow: "0 0 4px rgba(0,0,0,0.1)", // subtle text shadow for clarity
         }}
       >
         {title}
@@ -149,7 +158,7 @@ export default function GlowingCard({
                 fontSize: "14px",
                 color: colors.text.secondary,
                 transition: "all 0.3s ease",
-                transform: isHovered ? "translateX(4px)" : "translateX(0)",
+                transform: isHovered ? "translateX(3px)" : "translateX(0)",
                 transitionDelay: `${idx * 0.05}s`,
               }}
             >
@@ -160,7 +169,7 @@ export default function GlowingCard({
                   borderRadius: "50%",
                   background: color,
                   marginRight: "12px",
-                  boxShadow: isHovered ? `0 0 8px ${color}` : "none",
+                  boxShadow: isHovered ? `0 0 6px ${color}40` : "none",
                   transition: "all 0.3s ease",
                 }}
               />
@@ -188,7 +197,7 @@ export default function GlowingCard({
           style={{
             marginLeft: "8px",
             transition: "transform 0.3s ease",
-            transform: isHovered ? "translateX(4px)" : "translateX(0)",
+            transform: isHovered ? "translateX(3px)" : "translateX(0)",
             display: "inline-block",
           }}
         >

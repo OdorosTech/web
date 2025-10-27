@@ -1,70 +1,100 @@
 "use client";
-import * as React from "react";
-import { useEffect, useState } from "react";
-import { Typography, Row, Col, Card } from "antd";
+import { useState, useEffect } from "react";
 import { ContentItem, getContentByType } from "@/lib/content";
-import * as Icons from "@ant-design/icons";
-
-const { Title, Paragraph } = Typography;
+import PageContainer from "@/components/common/PageContainer";
+import PageHeader from "@/components/common/PageHeader";
+import GlowingCard from "@/components/common/GlowingCard";
+import StatsSection from "@/components/common/StatsSection";
+import CTASection from "@/components/common/CTASection";
+import { getColorScheme } from "@/components/common/ColorUnits";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Industries() {
   const [industries, setIndustries] = useState<ContentItem[]>([]);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     getContentByType("industries").then(setIndustries);
   }, []);
 
+  // Add color schemes to industries
+  const industriesWithColors = industries.map((service, index) => ({
+    ...service,
+    ...getColorScheme(index),
+  }));
+
+  const isDarkMode = theme === "dark";
+
+  // const stats = [
+  //   {
+  //     number: "500+",
+  //     label: "Projects Delivered",
+  //     color: isDarkMode ? "#e879f9" : "#c026d3",
+  //   },
+  //   {
+  //     number: "98%",
+  //     label: "Client Satisfaction",
+  //     color: isDarkMode ? "#60a5fa" : "#3b82f6",
+  //   },
+  //   {
+  //     number: "50+",
+  //     label: "Expert Team",
+  //     color: isDarkMode ? "#34d399" : "#10b981",
+  //   },
+  //   {
+  //     number: "24/7",
+  //     label: "Support Available",
+  //     color: isDarkMode ? "#fb923c" : "#f97316",
+  //   },
+  // ];
+
   return (
-    <div style={{ padding: "80px 20px", marginTop: 64 }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <Title level={1} style={{ textAlign: "center", marginBottom: 20 }}>
-          Industries We Serve
-        </Title>
-        <Paragraph
-          style={{
-            textAlign: "center",
-            fontSize: 18,
-            marginBottom: 60,
-            maxWidth: 800,
-            margin: "0 auto 60px",
-          }}
-        >
-          Delivering specialized solutions across diverse sectors
-        </Paragraph>
+    <PageContainer>
+      <PageHeader
+        badge="✨ Explore Our Expertise"
+        title="Industries We Serve"
+        description="Delivering specialized solutions across diverse sectors"
+      />
 
-        <Row gutter={[32, 32]}>
-          {industries.map((industry, index) => {
-            const IconComponent = industry.icon
-              ? (Icons as any)[industry.icon]
-              : Icons.StarOutlined;
-
-            return (
-              <Col xs={24} md={12} lg={6} key={index}>
-                <Card style={{ height: "100%" }} hoverable>
-                  <div style={{ marginBottom: 20 }}>
-                    <IconComponent style={{ fontSize: 48, color: "#c026d3" }} />
-                  </div>
-                  <Title level={3}>{industry.title}</Title>
-                  <Paragraph style={{ marginBottom: 20 }}>
-                    {industry.description}
-                  </Paragraph>
-                  {industry.solutions && (
-                    <ul style={{ paddingLeft: 20 }}>
-                      {industry.solutions.map(
-                        (solution: string, idx: number) => (
-                          <li key={idx} style={{ marginBottom: 8 }}>
-                            {solution}
-                          </li>
-                        )
-                      )}
-                    </ul>
-                  )}
-                </Card>
-              </Col>
-            );
-          })}
-        </Row>
+      {/* Services Grid */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "24px",
+          marginBottom: "48px",
+        }}
+      >
+        {industriesWithColors.map((industry, index) => (
+          <GlowingCard
+            key={index}
+            title={industry.title}
+            description={industry.description!}
+            icon={industry.icon}
+            features={industry.features}
+            color={industry.color}
+            gradient={industry.gradient}
+            isHovered={hoveredCard === index}
+            onMouseEnter={() => setHoveredCard(index)}
+            onMouseLeave={() => setHoveredCard(null)}
+            index={index}
+          />
+        ))}
       </div>
-    </div>
+
+      {/* Stats Section */}
+      {/* <StatsSection stats={stats} /> */}
+
+      {/* CTA Section */}
+      <CTASection
+        title="Ready to Transform Your Business?"
+        description="Let's discuss how our solutions can help you achieve your goals"
+        buttonText="Get Started Today →"
+        onButtonClick={() => {
+          console.log("CTA clicked");
+        }}
+      />
+    </PageContainer>
   );
 }

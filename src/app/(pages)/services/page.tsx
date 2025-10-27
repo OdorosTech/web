@@ -24,8 +24,6 @@ export default function ServicesPage() {
     ...getColorScheme(index),
   }));
 
-  console.log({ servicesWithColors });
-
   const isDarkMode = theme === "dark";
 
   const stats = [
@@ -72,7 +70,7 @@ export default function ServicesPage() {
           <GlowingCard
             key={index}
             title={service.title}
-            description={service.description}
+            description={service.description!}
             icon={service.icon}
             features={service.features}
             color={service.color}
