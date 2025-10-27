@@ -45,7 +45,7 @@ export default function Industries() {
     <div
       style={{
         padding: "120px 20px",
-        background: colors.background,
+        background: colors.background.primary,
         position: "relative",
         overflow: "hidden",
       }}

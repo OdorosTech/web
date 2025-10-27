@@ -15,7 +15,7 @@ export default function PageContainer({ children }: PageContainerProps) {
     <div
       style={{
         minHeight: "100vh",
-        background: colors.background,
+        background: colors.background.primary,
         padding: "80px 24px 40px",
         transition: "background 0.3s ease",
       }}

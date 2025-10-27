@@ -21,3 +21,5 @@ Create `src/content/industries/my-industry.md`
 
 ### Add a Job:
 Create `src/content/careers/my-job.md`
+# web
+# web
