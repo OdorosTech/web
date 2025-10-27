@@ -50,16 +50,17 @@ export default function Header() {
           width: "100%",
           zIndex: 1000,
           padding: "0 24px",
-          background: scrolled
-            ? theme === "dark"
-              ? "rgba(30, 20, 40, 0.3)" // dark glass tint
-              : "rgba(255, 255, 255, 0.3)" // light glass tint
-            : "transparent",
+          // background: scrolled
+          //   ? theme === "dark"
+          //     ? "rgba(30, 20, 40, 0.3)" // dark glass tint
+          //     : "rgba(255, 255, 255, 0.3)" // light glass tint
+          //   : "transparent",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
           borderRadius: "0 0 16px 16px",
           transition: "all 0.4s ease",
           color: colors.text.primary,
+          background: `radial-gradient(circle, rgba(192, 38, 211, 0.1) 0%, transparent 90%)`,
         }}
       >
         <div
@@ -131,47 +132,16 @@ export default function Header() {
                       fontSize: "15px",
                       transition: "all 0.3s ease",
 
-                      background: isActive
-                        ? theme === "dark"
-                          ? "rgba(192, 38, 211, 0.15)"
-                          : "rgba(192, 38, 211, 0.08)"
-                        : "transparent",
+                      // background: isActive
+                      //   ? theme === "dark"
+                      //     ? "rgba(192, 38, 211, 0.15)"
+                      //     : "rgba(192, 38, 211, 0.08)"
+                      //   : "transparent",
                       cursor: "pointer",
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!isActive) {
-                        e.currentTarget.style.color = "#c026d3";
-                        e.currentTarget.style.background =
-                          theme === "dark"
-                            ? "rgba(192, 38, 211, 0.1)"
-                            : "rgba(192, 38, 211, 0.05)";
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!isActive) {
-                        e.currentTarget.style.color = colors.text.secondary;
-                        e.currentTarget.style.background = "transparent";
-                      }
                     }}
                   >
                     {item.label}
                   </div>
-                  {isActive && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        bottom: "-8px",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        width: "24px",
-                        height: "3px",
-                        borderRadius: "3px",
-                        background:
-                          "linear-gradient(90deg, #c026d3 0%, #9333ea 100%)",
-                        boxShadow: "0 0 12px rgba(192, 38, 211, 0.6)",
-                      }}
-                    />
-                  )}
                 </Link>
               );
             })}
