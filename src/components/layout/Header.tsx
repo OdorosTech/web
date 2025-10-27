@@ -11,6 +11,7 @@ import {
   MoonOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/contexts/ThemeContext";
 import { getTheme } from "@/styles/theme";
@@ -74,8 +75,8 @@ export default function Header() {
           }}
         >
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: "none" }}>
-            <div
+          {/* <Link href="/" style={{ textDecoration: "none" }}> */}
+          {/* <div
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -97,7 +98,22 @@ export default function Header() {
               >
                 Odoros
               </span>
-            </div>
+            </div> */}
+          <Link
+            href="/"
+            style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+          >
+            <Image
+              src="/images/odoros.png"
+              alt="Odoros Logo"
+              // width={180} // 120 + half = 180
+              // height={100} // adjust height as needed
+              width={270} // 180 + half = 270
+              height={150} // 100
+              priority // recommended height for header logo
+              // priority
+            />
+            {/* </Link> */}
           </Link>
 
           {/* Desktop Menu */}
