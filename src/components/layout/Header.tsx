@@ -39,7 +39,7 @@ export default function Header() {
     { key: "/services", label: "Services" },
     { key: "/industries", label: "Industries" },
     { key: "/careers", label: "Careers" },
-    // { key: "/contact", label: "Contact" },
+    { key: "/blog", label: "Blog" },
   ];
 
   return (
