@@ -19,7 +19,7 @@ import {
   Col,
 } from "antd";
 import { ArrowLeftOutlined, ShareAltOutlined } from "@ant-design/icons";
-import PageContainer from "@/components/PageContainer";
+import PageContainer from "@/components/common/PageContainer";
 
 const { Title, Paragraph, Text } = Typography;
 
