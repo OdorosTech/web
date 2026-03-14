@@ -279,12 +279,15 @@ function MarkdownContent({ post }: { post: BlogPost }) {
   );
 }
 
+import { use } from "react";
+
 // --- Main Page ---
 export default function BlogArticlePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = use(params);
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
   const { theme } = useTheme();
@@ -294,7 +297,7 @@ export default function BlogArticlePage({
     const fetchPost = async () => {
       try {
         setLoading(true);
-        const fetchedPost = await getBlogPostBySlug(params.slug);
+        const fetchedPost = await getBlogPostBySlug(slug);
         setPost(fetchedPost);
       } catch (error) {
         setPost(null);
@@ -303,7 +306,7 @@ export default function BlogArticlePage({
       }
     };
     fetchPost();
-  }, [params.slug]);
+  }, [slug]);
 
   if (loading) return <Loader />;
   if (!post) return <NotFound onBack={() => router.push("/blog")} />;

@@ -21,8 +21,8 @@ export default function BlogPage() {
 //     getBlogPosts().then(setBlogPosts);
 //   }, []);
 
-useEffect(() => {
-    getContentByType("blog").then(setBlogPosts);
+  useEffect(() => {
+    getBlogPosts().then(setBlogPosts);
   }, []);
 
   console.log({blogPosts})
