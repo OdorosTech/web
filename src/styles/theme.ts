@@ -17,9 +17,9 @@
 //     secondary: "#d9d9d9",
 //   },
 //   glow: {
-//     primary: "rgba(192, 38, 211, 0.08)",
+//     primary: "rgba(172, 24, 140, 0.08)",
 //     secondary: "rgba(59, 130, 246, 0.08)",
-//     hover: "rgba(192, 38, 211, 0.15)",
+//     hover: "rgba(172, 24, 140, 0.15)",
 //   },
 //   shadow: {
 //     sm: "0 2px 8px rgba(0, 0, 0, 0.08)",
@@ -45,9 +45,9 @@
 //     secondary: "rgba(255, 255, 255, 0.2)",
 //   },
 //   glow: {
-//     primary: "rgba(192, 38, 211, 0.15)",
+//     primary: "rgba(172, 24, 140, 0.15)",
 //     secondary: "rgba(59, 130, 246, 0.15)",
-//     hover: "rgba(192, 38, 211, 0.25)",
+//     hover: "rgba(172, 24, 140, 0.25)",
 //   },
 //   shadow: {
 //     sm: "0 2px 8px rgba(0, 0, 0, 0.45)",
@@ -78,18 +78,18 @@ export const lightTheme = {
     tertiary: "rgba(0, 0, 0, 0.4)", // subtle black
   },
   border: {
-    primary: "rgba(192, 38, 211, 0.3)", // soft purple border
-    secondary: "rgba(192, 38, 211, 0.15)", // lighter purple border
+    primary: "rgba(172, 24, 140, 0.3)", // soft purple border
+    secondary: "rgba(172, 24, 140, 0.15)", // lighter purple border
   },
   glow: {
-    primary: "rgba(192, 38, 211, 0.12)", // very subtle purple glow
+    primary: "rgba(172, 24, 140, 0.12)", // very subtle purple glow
     secondary: "rgba(59, 130, 246, 0.1)", // subtle blue glow
-    hover: "rgba(192, 38, 211, 0.22)", // stronger glow on hover
+    hover: "rgba(172, 24, 140, 0.22)", // stronger glow on hover
   },
   shadow: {
-    sm: "0 2px 8px rgba(192, 38, 211, 0.1)", // soft purple shadow
-    md: "0 4px 16px rgba(192, 38, 211, 0.15)", // medium shadow
-    lg: "0 8px 24px rgba(192, 38, 211, 0.2)", // larger soft shadow
+    sm: "0 2px 8px rgba(172, 24, 140, 0.1)", // soft purple shadow
+    md: "0 4px 16px rgba(172, 24, 140, 0.15)", // medium shadow
+    lg: "0 8px 24px rgba(172, 24, 140, 0.2)", // larger soft shadow
   },
 };
 
@@ -107,18 +107,18 @@ export const darkTheme = {
     tertiary: "rgba(255, 255, 255, 0.4)", // subtle white
   },
   border: {
-    primary: "rgba(192, 38, 211, 0.35)", // soft purple border
-    secondary: "rgba(192, 38, 211, 0.2)", // lighter purple border
+    primary: "rgba(172, 24, 140, 0.35)", // soft purple border
+    secondary: "rgba(172, 24, 140, 0.2)", // lighter purple border
   },
   glow: {
-    primary: "rgba(192, 38, 211, 0.18)", // subtle purple glow
+    primary: "rgba(172, 24, 140, 0.18)", // subtle purple glow
     secondary: "rgba(59, 130, 246, 0.15)", // subtle blue glow
-    hover: "rgba(192, 38, 211, 0.3)", // stronger glow on hover
+    hover: "rgba(172, 24, 140, 0.3)", // stronger glow on hover
   },
   shadow: {
-    sm: "0 2px 8px rgba(192, 38, 211, 0.25)", // soft purple shadow
-    md: "0 4px 16px rgba(192, 38, 211, 0.35)", // medium shadow
-    lg: "0 8px 24px rgba(192, 38, 211, 0.45)", // larger soft shadow
+    sm: "0 2px 8px rgba(172, 24, 140, 0.25)", // soft purple shadow
+    md: "0 4px 16px rgba(172, 24, 140, 0.35)", // medium shadow
+    lg: "0 8px 24px rgba(172, 24, 140, 0.45)", // larger soft shadow
   },
 };
 

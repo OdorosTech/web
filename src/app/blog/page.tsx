@@ -33,7 +33,7 @@ export default function BlogPage() {
     {
       number: `${blogPosts.length}+`,
       label: "Articles Published",
-      color: isDarkMode ? "#e879f9" : "#c026d3",
+      color: isDarkMode ? "#e879f9" : "#ac188c",
     },
     {
       number: "10K+",

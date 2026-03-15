@@ -11,7 +11,7 @@ export default function CTASection({
   description,
   buttonText,
   onButtonClick,
-  gradient = "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+  gradient = "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
 }: CTASectionProps) {
   return (
     <div
@@ -22,7 +22,7 @@ export default function CTASection({
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
-        boxShadow: "0 12px 48px rgba(192, 38, 211, 0.3)",
+        boxShadow: "0 12px 48px rgba(172, 24, 140, 0.3)",
         animation: "fadeInUp 0.8s ease-out 0.6s backwards",
       }}
     >
@@ -84,7 +84,7 @@ export default function CTASection({
             background: "#ffffff",
             border: "none",
             borderRadius: "8px",
-            color: "#c026d3",
+            color: "#ac188c",
             fontSize: "16px",
             fontWeight: "600",
             cursor: "pointer",

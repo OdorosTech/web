@@ -11,9 +11,12 @@ export const HeroDescription: React.FC<{
     variant="body"
     theme={theme}
     style={{
-      marginBottom: designTokens.spacing["3xl"],
+      marginBottom: designTokens.spacing["4xl"],
       maxWidth: "600px",
       color: theme.colors.text.secondary,
+      fontSize: "1.25rem",
+      lineHeight: 1.6,
+      letterSpacing: "0.01em",
     }}
   >
     {description}

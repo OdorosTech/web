@@ -13,6 +13,10 @@ export const HeroTitle: React.FC<{
     style={{
       marginBottom: designTokens.spacing.xl,
       maxWidth: "800px",
+      fontSize: "clamp(3rem, 5vw, 4.5rem)",
+      lineHeight: 1.1,
+      letterSpacing: "-0.02em",
+      fontWeight: 700,
     }}
   >
     {title.main}

@@ -16,7 +16,7 @@ export default function ThemeConfigProvider({
         algorithm:
           theme === "dark" ? antTheme.darkAlgorithm : antTheme.defaultAlgorithm,
         token: {
-          colorPrimary: "#c026d3",
+          colorPrimary: "#ac188c",
           borderRadius: 8,
           colorBgContainer: theme === "dark" ? "#141414" : "#ffffff",
           colorBgElevated: theme === "dark" ? "#1f1f1f" : "#ffffff",
@@ -44,7 +44,7 @@ export default function ThemeConfigProvider({
             colorBgContainer: theme === "dark" ? "#1f1f1f" : "#ffffff",
           },
           Button: {
-            primaryShadow: "0 4px 12px rgba(192, 38, 211, 0.3)",
+            primaryShadow: "0 4px 12px rgba(172, 24, 140, 0.3)",
           },
         },
       }}

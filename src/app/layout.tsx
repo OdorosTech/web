@@ -23,7 +23,7 @@
 //           <ConfigProvider
 //             theme={{
 //               token: {
-//                 colorPrimary: "#c026d3",
+//                 colorPrimary: "#ac188c",
 //                 borderRadius: 8,
 //               },
 //             }}

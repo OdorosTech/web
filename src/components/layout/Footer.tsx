@@ -9,6 +9,7 @@ import {
   EnvironmentOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "@/contexts/ThemeContext";
 import { getTheme } from "@/styles/theme";
 
@@ -66,14 +67,14 @@ export default function Footer() {
         WebkitBackdropFilter: "blur(20px)",
         // borderTop: `1px solid ${
         //   theme === "dark"
-        //     ? "rgba(192, 38, 211, 0.4)"
-        //     : "rgba(192, 38, 211, 0.3)"
+        //     ? "rgba(172, 24, 140, 0.4)"
+        //     : "rgba(172, 24, 140, 0.3)"
         // }`,
         borderRadius: "16px 16px 0 0",
         // boxShadow:
         //   theme === "dark"
-        //     ? "0 0 30px 4px rgba(192, 38, 211, 0.6)"
-        //     : "0 0 20px 3px rgba(192, 38, 211, 0.3)",
+        //     ? "0 0 30px 4px rgba(172, 24, 140, 0.6)"
+        //     : "0 0 20px 3px rgba(172, 24, 140, 0.3)",
         color: colors.text.primary,
         overflow: "hidden",
         zIndex: 10,
@@ -88,7 +89,7 @@ export default function Footer() {
           width: "320px",
           height: "320px",
           borderRadius: "50%",
-          background: `radial-gradient(circle, rgba(192, 38, 211, 0.6) 0%, transparent 70%)`,
+          background: `radial-gradient(circle, rgba(172, 24, 140, 0.6) 0%, transparent 70%)`,
           filter: "blur(80px)",
           pointerEvents: "none",
           zIndex: 0,
@@ -102,7 +103,7 @@ export default function Footer() {
           width: "320px",
           height: "320px",
           borderRadius: "50%",
-          background: `radial-gradient(circle, rgba(192, 38, 211, 0.4) 0%, transparent 70%)`,
+          background: `radial-gradient(circle, rgba(172, 24, 140, 0.4) 0%, transparent 70%)`,
           filter: "blur(80px)",
           pointerEvents: "none",
           zIndex: 0,
@@ -121,52 +122,18 @@ export default function Footer() {
           {/* Company Info */}
           <Col xs={24} sm={24} md={8} lg={8}>
             <div style={{ marginBottom: "24px" }}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "12px",
-                  marginBottom: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "12px",
-                    background:
-                      "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    boxShadow: "0 0 16px rgba(192, 38, 211, 0.6)",
-                  }}
+              <div style={{ marginBottom: "8px", marginLeft: "-8px" }}>
+                <Link
+                  href="/"
+                  style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
                 >
-                  <span
-                    style={{
-                      fontSize: "24px",
-                      fontWeight: "bold",
-                      color: "#fff",
-                      textShadow: "0 0 8px rgba(255, 255, 255, 0.8)",
-                    }}
-                  >
-                    O
-                  </span>
-                </div>
-                <span
-                  style={{
-                    fontSize: "24px",
-                    fontWeight: "700",
-                    background:
-                      "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    textShadow: "0 0 8px rgba(192, 38, 211, 0.8)",
-                  }}
-                >
-                  Odoros Technologies
-                </span>
+                  <Image
+                    src="/images/odoros.png"
+                    alt="Odoros Logo"
+                    width={180}
+                    height={100}
+                  />
+                </Link>
               </div>
               <p
                 style={{
@@ -195,8 +162,8 @@ export default function Footer() {
                     color: colors.text.secondary,
                   }}
                 >
-                  <MailOutlined style={{ color: "#c026d3" }} />
-                  <span style={{ fontSize: "14px" }}>info@odoros.tech</span>
+                  <MailOutlined style={{ color: "#ac188c" }} />
+                  <span style={{ fontSize: "14px" }}>hello@odoros.com</span>
                 </div>
                 <div
                   style={{
@@ -206,8 +173,8 @@ export default function Footer() {
                     color: colors.text.secondary,
                   }}
                 >
-                  <PhoneOutlined style={{ color: "#c026d3" }} />
-                  <span style={{ fontSize: "14px" }}>+1 (555) 123-4567</span>
+                  <PhoneOutlined style={{ color: "#ac188c" }} />
+                  <span style={{ fontSize: "14px" }}>+252615539669</span>
                 </div>
                 <div
                   style={{
@@ -217,8 +184,8 @@ export default function Footer() {
                     color: colors.text.secondary,
                   }}
                 >
-                  <EnvironmentOutlined style={{ color: "#c026d3" }} />
-                  <span style={{ fontSize: "14px" }}>San Francisco, CA</span>
+                  <EnvironmentOutlined style={{ color: "#ac188c" }} />
+                  <span style={{ fontSize: "14px" }}>Taleh, Hodan, Mogadishu, Somalia</span>
                 </div>
               </Space>
             </div>
@@ -249,7 +216,7 @@ export default function Footer() {
                     display: "block",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#c026d3";
+                    e.currentTarget.style.color = "#ac188c";
                     e.currentTarget.style.paddingLeft = "8px";
                   }}
                   onMouseLeave={(e) => {
@@ -288,7 +255,7 @@ export default function Footer() {
                     display: "block",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#c026d3";
+                    e.currentTarget.style.color = "#ac188c";
                     e.currentTarget.style.paddingLeft = "8px";
                   }}
                   onMouseLeave={(e) => {
@@ -327,7 +294,7 @@ export default function Footer() {
                     display: "block",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#c026d3";
+                    e.currentTarget.style.color = "#ac188c";
                     e.currentTarget.style.paddingLeft = "8px";
                   }}
                   onMouseLeave={(e) => {
@@ -393,15 +360,15 @@ export default function Footer() {
                     fontSize: "18px",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#c026d3";
-                    e.currentTarget.style.borderColor = "#c026d3";
+                    e.currentTarget.style.color = "#ac188c";
+                    e.currentTarget.style.borderColor = "#ac188c";
                     e.currentTarget.style.background =
                       theme === "dark"
-                        ? "rgba(192, 38, 211, 0.15)"
-                        : "rgba(192, 38, 211, 0.08)";
+                        ? "rgba(172, 24, 140, 0.15)"
+                        : "rgba(172, 24, 140, 0.08)";
                     e.currentTarget.style.transform = "translateY(-4px)";
                     e.currentTarget.style.boxShadow =
-                      "0 4px 12px rgba(192, 38, 211, 0.3)";
+                      "0 4px 12px rgba(172, 24, 140, 0.3)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.color = colors.text.secondary;
@@ -435,7 +402,7 @@ export default function Footer() {
                 transition: "color 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#c026d3";
+                e.currentTarget.style.color = "#ac188c";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.color = colors.text.tertiary;
@@ -452,7 +419,7 @@ export default function Footer() {
                 transition: "color 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#c026d3";
+                e.currentTarget.style.color = "#ac188c";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.color = colors.text.tertiary;
@@ -469,7 +436,7 @@ export default function Footer() {
                 transition: "color 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#c026d3";
+                e.currentTarget.style.color = "#ac188c";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.color = colors.text.tertiary;

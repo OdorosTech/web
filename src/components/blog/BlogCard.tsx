@@ -27,7 +27,7 @@ export default function BlogCard({
 
   // Generate gradient colors based on index for cards without images
   const gradients = [
-    "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+    "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
     "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
     "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",

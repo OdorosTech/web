@@ -19,8 +19,8 @@ export default function Services() {
       icon: <RobotOutlined />,
       title: "AI & Machine Learning",
       description: "Custom AI solutions tailored to your business needs",
-      color: "#c026d3",
-      gradient: "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+      color: "#ac188c",
+      gradient: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
     },
     {
       icon: <BarChartOutlined />,
@@ -63,7 +63,7 @@ export default function Services() {
           width: "400px",
           height: "400px",
           background:
-            "radial-gradient(circle, rgba(192, 38, 211, 0.15) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(172, 24, 140, 0.15) 0%, transparent 70%)",
           borderRadius: "50%",
           filter: "blur(80px)",
           pointerEvents: "none",
@@ -86,13 +86,13 @@ export default function Services() {
               display: "inline-block",
               padding: "8px 20px",
               background:
-                "linear-gradient(135deg, rgba(192, 38, 211, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%)",
-              border: "1px solid rgba(192, 38, 211, 0.3)",
+                "linear-gradient(135deg, rgba(172, 24, 140, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%)",
+              border: "1px solid rgba(172, 24, 140, 0.3)",
               borderRadius: "20px",
               marginBottom: "24px",
               fontSize: "13px",
               fontWeight: "600",
-              color: "#c026d3",
+              color: "#ac188c",
               letterSpacing: "0.5px",
               textTransform: "uppercase",
             }}

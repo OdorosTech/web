@@ -2,8 +2,8 @@
 
 export const colorSchemes = {
   purple: {
-    color: "#c026d3",
-    gradient: "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+    color: "#ac188c",
+    gradient: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
   },
   blue: {
     color: "#3b82f6",

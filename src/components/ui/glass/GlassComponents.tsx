@@ -70,6 +70,8 @@ interface GlassButtonProps {
   icon?: ReactNode;
   loading?: boolean;
   glow?: boolean;
+  onMouseEnter?: React.MouseEventHandler<HTMLButtonElement>;
+  onMouseLeave?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const GlassButton: React.FC<GlassButtonProps> = ({
@@ -82,6 +84,8 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
   icon,
   loading = false,
   glow = false,
+  onMouseEnter,
+  onMouseLeave,
 }) => {
   const sizeStyles = {
     sm: {
@@ -148,11 +152,13 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
         if (!disabled && !loading) {
           Object.assign(e.currentTarget.style, hoverStyles);
         }
+        if (onMouseEnter) onMouseEnter(e);
       }}
       onMouseLeave={(e) => {
         if (!disabled && !loading) {
           Object.assign(e.currentTarget.style, baseStyles);
         }
+        if (onMouseLeave) onMouseLeave(e);
       }}
     >
       {loading ? (

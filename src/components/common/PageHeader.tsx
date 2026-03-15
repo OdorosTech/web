@@ -13,7 +13,7 @@ export default function PageHeader({
   badge = "✨ What We Offer",
   title,
   description,
-  badgeColor = "#c026d3",
+  badgeColor = "#ac188c",
 }: PageHeaderProps) {
   const { theme } = useTheme();
   const colors = getTheme(theme);

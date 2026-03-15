@@ -6,7 +6,7 @@ interface GlowingBackgroundProps {
 }
 
 export default function GlowingBackground({
-  primaryColor = "rgba(192, 38, 211, 0.08)",
+  primaryColor = "rgba(172, 24, 140, 0.08)",
   secondaryColor = "rgba(59, 130, 246, 0.08)",
 }: GlowingBackgroundProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -73,7 +73,7 @@ export default function GlowingBackground({
           left: 0,
           right: 0,
           bottom: 0,
-          background: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, rgba(192, 38, 211, 0.06) 0%, transparent 100%)`,
+          background: `radial-gradient(circle 300px at ${mousePosition.x}px ${mousePosition.y}px, rgba(172, 24, 140, 0.06) 0%, transparent 100%)`,
           pointerEvents: "none",
           zIndex: 0,
         }}

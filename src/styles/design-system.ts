@@ -136,7 +136,7 @@ export interface GlassmorphismTheme {
 
 export const lightGlassTheme: GlassmorphismTheme = {
   colors: {
-    primary: "#c026d3", // Purple primary
+    primary: "#ac188c", // Purple primary
     secondary: "#667eea", // Blue secondary
     accent: "#06b6d4", // Cyan accent
     text: {
@@ -158,16 +158,16 @@ export const lightGlassTheme: GlassmorphismTheme = {
       border: "rgba(255, 255, 255, 0.3)",
     },
     glow: {
-      primary: "rgba(192, 38, 211, 0.15)",
+      primary: "rgba(172, 24, 140, 0.15)",
       secondary: "rgba(102, 126, 234, 0.12)",
       accent: "rgba(6, 182, 212, 0.1)",
-      hover: "rgba(192, 38, 211, 0.25)",
+      hover: "rgba(172, 24, 140, 0.25)",
     },
     shadow: {
-      sm: "0 2px 8px rgba(192, 38, 211, 0.08)",
-      md: "0 8px 24px rgba(192, 38, 211, 0.12)",
-      lg: "0 16px 40px rgba(192, 38, 211, 0.15)",
-      glow: "0 0 60px rgba(192, 38, 211, 0.3)",
+      sm: "0 2px 8px rgba(172, 24, 140, 0.08)",
+      md: "0 8px 24px rgba(172, 24, 140, 0.12)",
+      lg: "0 16px 40px rgba(172, 24, 140, 0.15)",
+      glow: "0 0 60px rgba(172, 24, 140, 0.3)",
     },
   },
   effects: {
@@ -181,7 +181,7 @@ export const lightGlassTheme: GlassmorphismTheme = {
     },
     neonGlow: {
       primary:
-        "box-shadow: 0 0 20px rgba(192, 38, 211, 0.4), 0 0 40px rgba(192, 38, 211, 0.2), 0 0 80px rgba(192, 38, 211, 0.1);",
+        "box-shadow: 0 0 20px rgba(172, 24, 140, 0.4), 0 0 40px rgba(172, 24, 140, 0.2), 0 0 80px rgba(172, 24, 140, 0.1);",
       secondary:
         "box-shadow: 0 0 20px rgba(102, 126, 234, 0.4), 0 0 40px rgba(102, 126, 234, 0.2);",
       accent:
@@ -192,7 +192,7 @@ export const lightGlassTheme: GlassmorphismTheme = {
 
 export const darkGlassTheme: GlassmorphismTheme = {
   colors: {
-    primary: "#c026d3",
+    primary: "#ac188c",
     secondary: "#667eea",
     accent: "#06b6d4",
     text: {
@@ -220,16 +220,16 @@ export const darkGlassTheme: GlassmorphismTheme = {
       border: "rgba(255, 255, 255, 0.15)",
     },
     glow: {
-      primary: "rgba(192, 38, 211, 0.25)",
+      primary: "rgba(172, 24, 140, 0.25)",
       secondary: "rgba(102, 126, 234, 0.2)",
       accent: "rgba(6, 182, 212, 0.15)",
-      hover: "rgba(192, 38, 211, 0.4)",
+      hover: "rgba(172, 24, 140, 0.4)",
     },
     shadow: {
       sm: "0 2px 8px rgba(0, 0, 0, 0.3)",
       md: "0 8px 24px rgba(0, 0, 0, 0.4)",
       lg: "0 16px 40px rgba(0, 0, 0, 0.5)",
-      glow: "0 0 60px rgba(192, 38, 211, 0.5)",
+      glow: "0 0 60px rgba(172, 24, 140, 0.5)",
     },
   },
   effects: {
@@ -243,7 +243,7 @@ export const darkGlassTheme: GlassmorphismTheme = {
     },
     neonGlow: {
       primary:
-        "box-shadow: 0 0 20px rgba(192, 38, 211, 0.6), 0 0 40px rgba(192, 38, 211, 0.4), 0 0 80px rgba(192, 38, 211, 0.2);",
+        "box-shadow: 0 0 20px rgba(172, 24, 140, 0.6), 0 0 40px rgba(172, 24, 140, 0.4), 0 0 80px rgba(172, 24, 140, 0.2);",
       secondary:
         "box-shadow: 0 0 20px rgba(102, 126, 234, 0.6), 0 0 40px rgba(102, 126, 234, 0.4);",
       accent:
@@ -266,18 +266,18 @@ export const lightTheme = {
     tertiary: "rgba(0, 0, 0, 0.4)", // subtle black
   },
   border: {
-    primary: "rgba(192, 38, 211, 0.3)", // soft purple border
-    secondary: "rgba(192, 38, 211, 0.15)", // lighter purple border
+    primary: "rgba(172, 24, 140, 0.3)", // soft purple border
+    secondary: "rgba(172, 24, 140, 0.15)", // lighter purple border
   },
   glow: {
-    primary: "rgba(192, 38, 211, 0.12)", // very subtle purple glow
+    primary: "rgba(172, 24, 140, 0.12)", // very subtle purple glow
     secondary: "rgba(59, 130, 246, 0.1)", // subtle blue glow
-    hover: "rgba(192, 38, 211, 0.22)", // stronger glow on hover
+    hover: "rgba(172, 24, 140, 0.22)", // stronger glow on hover
   },
   shadow: {
-    sm: "0 2px 8px rgba(192, 38, 211, 0.1)", // soft purple shadow
-    md: "0 4px 16px rgba(192, 38, 211, 0.15)", // medium shadow
-    lg: "0 8px 24px rgba(192, 38, 211, 0.2)", // larger soft shadow
+    sm: "0 2px 8px rgba(172, 24, 140, 0.1)", // soft purple shadow
+    md: "0 4px 16px rgba(172, 24, 140, 0.15)", // medium shadow
+    lg: "0 8px 24px rgba(172, 24, 140, 0.2)", // larger soft shadow
   },
 };
 
@@ -295,18 +295,18 @@ export const darkTheme = {
     tertiary: "rgba(255, 255, 255, 0.4)", // subtle white
   },
   border: {
-    primary: "rgba(192, 38, 211, 0.35)", // soft purple border
-    secondary: "rgba(192, 38, 211, 0.2)", // lighter purple border
+    primary: "rgba(172, 24, 140, 0.35)", // soft purple border
+    secondary: "rgba(172, 24, 140, 0.2)", // lighter purple border
   },
   glow: {
-    primary: "rgba(192, 38, 211, 0.18)", // subtle purple glow
+    primary: "rgba(172, 24, 140, 0.18)", // subtle purple glow
     secondary: "rgba(59, 130, 246, 0.15)", // subtle blue glow
-    hover: "rgba(192, 38, 211, 0.3)", // stronger glow on hover
+    hover: "rgba(172, 24, 140, 0.3)", // stronger glow on hover
   },
   shadow: {
-    sm: "0 2px 8px rgba(192, 38, 211, 0.25)", // soft purple shadow
-    md: "0 4px 16px rgba(192, 38, 211, 0.35)", // medium shadow
-    lg: "0 8px 24px rgba(192, 38, 211, 0.45)", // larger soft shadow
+    sm: "0 2px 8px rgba(172, 24, 140, 0.25)", // soft purple shadow
+    md: "0 4px 16px rgba(172, 24, 140, 0.35)", // medium shadow
+    lg: "0 8px 24px rgba(172, 24, 140, 0.45)", // larger soft shadow
   },
 };
 

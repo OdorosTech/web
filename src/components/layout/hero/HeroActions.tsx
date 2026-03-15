@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRightOutlined } from "@ant-design/icons";
+import { RocketOutlined, PlayCircleOutlined } from "@ant-design/icons";
 import { GlassButton } from "@/components/ui/glass/GlassComponents";
 import { designTokens } from "@/styles/design-system";
 
@@ -30,18 +30,18 @@ export const HeroActions: React.FC<{
           theme={theme}
           glow
           icon={
-            <ArrowRightOutlined
+            <RocketOutlined
               style={{
-                transition: "transform 0.3s ease",
+                transition: "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
                 transform:
                   hoveredButton === "primary"
-                    ? "translateX(4px)"
-                    : "translateX(0)",
+                    ? "translateX(4px) translateY(-4px)"
+                    : "translateX(0) translateY(0)",
               }}
             />
           }
-          // onMouseEnter={() => setHoveredButton("primary")}
-          // onMouseLeave={() => setHoveredButton(null)}
+          onMouseEnter={() => setHoveredButton("primary")}
+          onMouseLeave={() => setHoveredButton(null)}
         >
           {buttons.primary.text}
         </GlassButton>
@@ -52,8 +52,20 @@ export const HeroActions: React.FC<{
           variant="secondary"
           size="lg"
           theme={theme}
-          // onMouseEnter={() => setHoveredButton("secondary")}
-          // onMouseLeave={() => setHoveredButton(null)}
+          icon={
+            <PlayCircleOutlined
+              style={{
+                transition: "transform 0.3s ease, color 0.3s ease",
+                transform:
+                  hoveredButton === "secondary"
+                    ? "scale(1.1)"
+                    : "scale(1)",
+                color: hoveredButton === "secondary" ? theme.colors.accent : "inherit",
+              }}
+            />
+          }
+          onMouseEnter={() => setHoveredButton("secondary")}
+          onMouseLeave={() => setHoveredButton(null)}
         >
           {buttons.secondary.text}
         </GlassButton>

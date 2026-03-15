@@ -124,7 +124,7 @@ export default function CTA() {
                 fontWeight: "700",
                 margin: "0 0 24px 0",
                 background:
-                  "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #c026d3 100%)",
+                  "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ac188c 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

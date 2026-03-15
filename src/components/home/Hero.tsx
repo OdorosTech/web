@@ -1,12 +1,11 @@
 "use client";
 import React, { useMemo } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
-import { GlassContainer } from "@/components/ui/glass/GlassComponents";
+
 import { Enhanced3DVisualization } from "@/components/ui/3d/Enhanced3DVisualization";
 import { getGlassTheme, designTokens } from "@/styles/design-system";
 
 import {
-  HeroBadge,
   HeroTitle,
   HeroDescription,
   HeroActions,
@@ -15,10 +14,6 @@ import {
 
 // Types for better type safety
 interface HeroContent {
-  badge: {
-    label: string;
-    text: string;
-  };
   title: {
     main: string;
     highlight: string;
@@ -45,10 +40,6 @@ interface HeroProps {
 
 // Default content - following Single Responsibility Principle
 const defaultContent: HeroContent = {
-  badge: {
-    label: "Tijaabo",
-    text: "Introducing our advanced AI & Data Analytics platform",
-  },
   title: {
     main: "Transform Your Business with",
     highlight: "AI & Analytics",
@@ -78,7 +69,6 @@ const HeroContentBlock: React.FC<{
       maxWidth: "700px",
     }}
   >
-    <HeroBadge badge={content.badge} theme={theme} />
     <HeroTitle title={content.title} theme={theme} />
     <HeroDescription description={content.description} theme={theme} />
     <HeroActions buttons={content.buttons} theme={theme} />
@@ -102,7 +92,6 @@ export const Hero: React.FC<HeroProps> = ({
     () => ({
       ...defaultContent,
       ...content,
-      badge: { ...defaultContent.badge, ...content.badge },
       title: { ...defaultContent.title, ...content.title },
       buttons: {
         ...defaultContent.buttons,
@@ -121,9 +110,7 @@ export const Hero: React.FC<HeroProps> = ({
   );
 
   return (
-    <GlassContainer
-      variant="primary"
-      theme={theme}
+    <div
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -131,6 +118,8 @@ export const Hero: React.FC<HeroProps> = ({
         padding: `${designTokens.spacing["5xl"]} ${designTokens.spacing.lg} ${designTokens.spacing["3xl"]}`,
         position: "relative",
         overflow: "hidden",
+        width: "100%",
+        background: "transparent",
       }}
     >
       {/* Background Effects */}
@@ -150,7 +139,7 @@ export const Hero: React.FC<HeroProps> = ({
           style={{
             display: "grid",
             gridTemplateColumns: showVisualization
-              ? "repeat(auto-fit, minmax(400px, 1fr))"
+              ? "1.2fr 1fr"
               : "1fr",
             gap: designTokens.spacing["4xl"],
             alignItems: "center",
@@ -177,7 +166,6 @@ export const Hero: React.FC<HeroProps> = ({
                 theme={theme}
                 animated={animationEnabled}
                 interactive={interactiveMode}
-                complexity="medium"
               />
             </div>
           )}
@@ -227,7 +215,7 @@ export const Hero: React.FC<HeroProps> = ({
           }
         }
       `}</style>
-    </GlassContainer>
+    </div>
   );
 };
 

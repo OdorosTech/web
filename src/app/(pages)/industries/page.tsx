@@ -30,7 +30,7 @@ export default function Industries() {
   //   {
   //     number: "500+",
   //     label: "Projects Delivered",
-  //     color: isDarkMode ? "#e879f9" : "#c026d3",
+  //     color: isDarkMode ? "#e879f9" : "#ac188c",
   //   },
   //   {
   //     number: "98%",

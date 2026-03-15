@@ -13,22 +13,22 @@ const { Title, Paragraph } = Typography;
 export default function About() {
   const values = [
     {
-      icon: <RocketOutlined style={{ fontSize: 48, color: "#c026d3" }} />,
+      icon: <RocketOutlined style={{ fontSize: 48, color: "#ac188c" }} />,
       title: "Innovation",
       description: "Pushing boundaries with cutting-edge AI and data solutions",
     },
     {
-      icon: <TeamOutlined style={{ fontSize: 48, color: "#c026d3" }} />,
+      icon: <TeamOutlined style={{ fontSize: 48, color: "#ac188c" }} />,
       title: "Collaboration",
       description: "Working closely with clients to achieve their goals",
     },
     {
-      icon: <GlobalOutlined style={{ fontSize: 48, color: "#c026d3" }} />,
+      icon: <GlobalOutlined style={{ fontSize: 48, color: "#ac188c" }} />,
       title: "Global Reach",
       description: "Serving clients across industries and continents",
     },
     {
-      icon: <SafetyOutlined style={{ fontSize: 48, color: "#c026d3" }} />,
+      icon: <SafetyOutlined style={{ fontSize: 48, color: "#ac188c" }} />,
       title: "Trust",
       description:
         "Building lasting relationships through reliability and excellence",

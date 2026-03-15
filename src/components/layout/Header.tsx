@@ -61,7 +61,7 @@ export default function Header() {
           borderRadius: "0 0 16px 16px",
           transition: "all 0.4s ease",
           color: colors.text.primary,
-          background: `radial-gradient(circle, rgba(192, 38, 211, 0.1) 0%, transparent 90%)`,
+          background: `radial-gradient(circle, rgba(172, 24, 140, 0.1) 0%, transparent 90%)`,
         }}
       >
         <div
@@ -89,11 +89,11 @@ export default function Header() {
                   fontSize: "20px",
                   fontWeight: "700",
                   background:
-                    "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+                    "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
-                  textShadow: "0 0 6px rgba(192, 38, 211, 0.8)",
+                  textShadow: "0 0 6px rgba(172, 24, 140, 0.8)",
                 }}
               >
                 Odoros
@@ -144,15 +144,15 @@ export default function Header() {
                       gap: "8px",
                       padding: "6px 12px",
                       borderRadius: "8px",
-                      color: isActive ? "#c026d3" : colors.text.secondary,
+                      color: isActive ? "#ac188c" : colors.text.secondary,
                       fontWeight: isActive ? "600" : "500",
                       fontSize: "15px",
                       transition: "all 0.3s ease",
 
                       // background: isActive
                       //   ? theme === "dark"
-                      //     ? "rgba(192, 38, 211, 0.15)"
-                      //     : "rgba(192, 38, 211, 0.08)"
+                      //     ? "rgba(172, 24, 140, 0.15)"
+                      //     : "rgba(172, 24, 140, 0.08)"
                       //   : "transparent",
                       cursor: "pointer",
                     }}
@@ -181,9 +181,9 @@ export default function Header() {
               onMouseEnter={(e) => {
                 e.currentTarget.style.background =
                   theme === "dark"
-                    ? "rgba(192, 38, 211, 0.15)"
-                    : "rgba(192, 38, 211, 0.08)";
-                e.currentTarget.style.color = "#c026d3";
+                    ? "rgba(172, 24, 140, 0.15)"
+                    : "rgba(172, 24, 140, 0.08)";
+                e.currentTarget.style.color = "#ac188c";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
@@ -195,24 +195,24 @@ export default function Header() {
             <Button
               type="primary"
               style={{
-                background: "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+                background: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
                 border: "none",
                 borderRadius: "8px",
                 height: "40px",
                 padding: "0 24px",
                 fontWeight: "600",
-                boxShadow: "0 0 12px rgba(192, 38, 211, 0.7)",
+                boxShadow: "0 0 12px rgba(172, 24, 140, 0.7)",
                 transition: "all 0.3s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-2px)";
                 e.currentTarget.style.boxShadow =
-                  "0 0 20px rgba(192, 38, 211, 1)";
+                  "0 0 20px rgba(172, 24, 140, 1)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow =
-                  "0 0 12px rgba(192, 38, 211, 0.7)";
+                  "0 0 12px rgba(172, 24, 140, 0.7)";
               }}
             >
               <Link href="/contact" style={{ textDecoration: "none" }}>
@@ -254,7 +254,7 @@ export default function Header() {
                 width: "32px",
                 height: "32px",
                 borderRadius: "8px",
-                background: "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+                background: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -292,13 +292,13 @@ export default function Header() {
                     alignItems: "center",
                     gap: "12px",
                     padding: "12px 24px",
-                    color: isActive ? "#c026d3" : colors.text.secondary,
+                    color: isActive ? "#ac188c" : colors.text.secondary,
                     fontWeight: isActive ? "600" : "500",
                     background: isActive
-                      ? "rgba(192, 38, 211, 0.08)"
+                      ? "rgba(172, 24, 140, 0.08)"
                       : "transparent",
                     borderLeft: isActive
-                      ? "3px solid #c026d3"
+                      ? "3px solid #ac188c"
                       : "3px solid transparent",
                     transition: "all 0.3s ease",
                   }}
@@ -313,11 +313,11 @@ export default function Header() {
               type="primary"
               block
               style={{
-                background: "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+                background: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
                 border: "none",
                 height: "40px",
                 fontWeight: "600",
-                boxShadow: "0 0 12px rgba(192, 38, 211, 0.7)",
+                boxShadow: "0 0 12px rgba(172, 24, 140, 0.7)",
               }}
             >
               <Link href="/contact" style={{ textDecoration: "none" }}>

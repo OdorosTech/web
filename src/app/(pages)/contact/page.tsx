@@ -67,16 +67,16 @@ export default function Contact() {
                 }}
               >
                 <MailOutlined
-                  style={{ marginRight: 12, color: "#c026d3", fontSize: 20 }}
+                  style={{ marginRight: 12, color: "#ac188c", fontSize: 20 }}
                 />
                 <a
-                  href="mailto:info@odoros.tech"
+                  href="mailto:hello@odoros.com"
                   style={{
                     color: colors.text.secondary,
                     textDecoration: "underline",
                   }}
                 >
-                  info@odoros.tech
+                  hello@odoros.com
                 </a>
               </div>
 
@@ -90,9 +90,9 @@ export default function Contact() {
                 }}
               >
                 <PhoneOutlined
-                  style={{ marginRight: 12, color: "#c026d3", fontSize: 20 }}
+                  style={{ marginRight: 12, color: "#ac188c", fontSize: 20 }}
                 />
-                +1 (555) 123-4567
+                +252615539669
               </div>
 
               <div
@@ -105,9 +105,9 @@ export default function Contact() {
                 }}
               >
                 <EnvironmentOutlined
-                  style={{ marginRight: 12, color: "#c026d3", fontSize: 20 }}
+                  style={{ marginRight: 12, color: "#ac188c", fontSize: 20 }}
                 />
-                San Francisco, CA
+                Taleh, Hodan, Mogadishu, Somalia
               </div>
             </div>
 
@@ -122,9 +122,9 @@ export default function Contact() {
               Office Hours
             </Title>
             <Paragraph style={{ color: colors.text.secondary, fontSize: 15 }}>
-              Monday - Friday: 9:00 AM - 6:00 PM PST
+              Saturday - Thursday: 8:00 AM - 4:30 PM EAT
               <br />
-              Saturday - Sunday: Closed
+              Friday: Closed
             </Paragraph>
 
             <Title

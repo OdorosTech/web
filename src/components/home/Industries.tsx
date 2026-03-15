@@ -2,10 +2,10 @@
 import { useTheme } from "@/contexts/ThemeContext";
 import { getTheme } from "@/styles/theme";
 import {
-  BankOutlined,
-  MedicineBoxOutlined,
-  ShoppingOutlined,
-  CarOutlined,
+  ThunderboltOutlined,
+  HeartOutlined,
+  ShoppingCartOutlined,
+  ToolOutlined,
 } from "@ant-design/icons";
 import { useState } from "react";
 
@@ -16,28 +16,28 @@ export default function Industries() {
 
   const industries = [
     {
-      icon: <BankOutlined />,
+      icon: <ThunderboltOutlined />,
       name: "Finance",
       color: "#3b82f6",
       gradient: "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
     },
     {
-      icon: <MedicineBoxOutlined />,
+      icon: <HeartOutlined />,
       name: "Healthcare",
       color: "#10b981",
       gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
     },
     {
-      icon: <ShoppingOutlined />,
+      icon: <ShoppingCartOutlined />,
       name: "Retail",
       color: "#f97316",
       gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
     },
     {
-      icon: <CarOutlined />,
+      icon: <ToolOutlined />,
       name: "Manufacturing",
-      color: "#c026d3",
-      gradient: "linear-gradient(135deg, #c026d3 0%, #9333ea 100%)",
+      color: "#ac188c",
+      gradient: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
     },
   ];
 
