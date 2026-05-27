@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { GlassText } from "@/components/ui/glass/GlassComponents";
+import { GlassText } from "@/components/ui/glass";
 import { designTokens } from "@/styles/design-system";
 
 export const HeroDescription: React.FC<{
@@ -8,7 +8,7 @@ export const HeroDescription: React.FC<{
   theme: any;
 }> = ({ description, theme }) => (
   <GlassText
-    variant="body"
+    variant='body'
     theme={theme}
     style={{
       marginBottom: designTokens.spacing["4xl"],

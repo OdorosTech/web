@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { GlassContainer } from "@/components/ui/glass/GlassComponents";
+import { GlassContainer } from "@/components/ui/glass";
 import { designTokens } from "@/styles/design-system";
 
 export const HeroBadge: React.FC<{
@@ -8,7 +8,7 @@ export const HeroBadge: React.FC<{
   theme: any;
 }> = ({ badge, theme }) => (
   <GlassContainer
-    variant="secondary"
+    variant='secondary'
     theme={theme}
     glow
     animated

@@ -40,12 +40,26 @@
 
 import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { ConfigProvider } from "antd";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import ThemeConfigProvider from "@/components/ThemeConfigProvider";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Odoros Technologies - AI & Data Analytics Solutions",
@@ -59,7 +73,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang='en'
+      className={`${outfit.variable} ${plusJakartaSans.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <AntdRegistry>
           <ThemeProvider>

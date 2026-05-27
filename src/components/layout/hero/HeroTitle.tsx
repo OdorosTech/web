@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { GlassText } from "@/components/ui/glass/GlassComponents";
+import { GlassText } from "@/components/ui/glass";
 import { designTokens } from "@/styles/design-system";
 
 export const HeroTitle: React.FC<{
@@ -8,7 +8,7 @@ export const HeroTitle: React.FC<{
   theme: any;
 }> = ({ title, theme }) => (
   <GlassText
-    variant="h1"
+    variant='h1'
     theme={theme}
     style={{
       marginBottom: designTokens.spacing.xl,
@@ -22,7 +22,7 @@ export const HeroTitle: React.FC<{
     {title.main}
     <br />
     <GlassText
-      variant="h1"
+      variant='h1'
       gradient
       theme={theme}
       style={{ display: "inline" }}

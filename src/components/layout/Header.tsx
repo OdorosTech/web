@@ -100,12 +100,12 @@ export default function Header() {
               </span>
             </div> */}
           <Link
-            href="/"
+            href='/'
             style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
           >
             <Image
-              src="/images/odoros.png"
-              alt="Odoros Logo"
+              src='/images/odoros.png'
+              alt='Odoros Logo'
               // width={180} // 120 + half = 180
               // height={100} // adjust height as needed
               width={270} // 180 + half = 270
@@ -124,7 +124,7 @@ export default function Header() {
               alignItems: "center",
               gap: "32px",
             }}
-            className="desktop-menu"
+            className='desktop-menu'
           >
             {menuItems.map((item) => {
               const isActive = pathname === item.key;
@@ -165,7 +165,7 @@ export default function Header() {
 
             {/* Theme Toggle */}
             <Button
-              type="text"
+              type='text'
               icon={theme === "dark" ? <SunOutlined /> : <MoonOutlined />}
               onClick={toggleTheme}
               style={{
@@ -192,7 +192,7 @@ export default function Header() {
             />
 
             {/* CTA Button */}
-            <Button
+            {/* <Button
               type="primary"
               style={{
                 background: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
@@ -219,13 +219,13 @@ export default function Header() {
                 <PhoneOutlined style={{ marginRight: "8px" }} />
                 Contact Us
               </Link>
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="mobile-menu">
+          <div className='mobile-menu'>
             <Button
-              type="text"
+              type='text'
               icon={theme === "dark" ? <SunOutlined /> : <MoonOutlined />}
               onClick={toggleTheme}
               style={{
@@ -234,7 +234,7 @@ export default function Header() {
               }}
             />
             <Button
-              type="text"
+              type='text'
               icon={<MenuOutlined />}
               onClick={() => setDrawerVisible(true)}
               style={{
@@ -269,7 +269,7 @@ export default function Header() {
             <span style={{ fontSize: "18px", fontWeight: "700" }}>Odoros</span>
           </div>
         }
-        placement="right"
+        placement='right'
         onClose={() => setDrawerVisible(false)}
         open={drawerVisible}
         styles={{
@@ -310,7 +310,7 @@ export default function Header() {
           })}
           <div style={{ padding: "12px 24px" }}>
             <Button
-              type="primary"
+              type='primary'
               block
               style={{
                 background: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
@@ -320,7 +320,7 @@ export default function Header() {
                 boxShadow: "0 0 12px rgba(172, 24, 140, 0.7)",
               }}
             >
-              <Link href="/contact" style={{ textDecoration: "none" }}>
+              <Link href='/contact' style={{ textDecoration: "none" }}>
                 <PhoneOutlined style={{ marginRight: "8px" }} />
                 Contact Us
               </Link>

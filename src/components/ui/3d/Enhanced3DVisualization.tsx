@@ -7,11 +7,9 @@ interface Enhanced3DVisualizationProps {
   interactive?: boolean;
 }
 
-export const Enhanced3DVisualization: React.FC<Enhanced3DVisualizationProps> = ({
-  theme,
-  animated = true,
-  interactive = true,
-}) => {
+export const Enhanced3DVisualization: React.FC<
+  Enhanced3DVisualizationProps
+> = ({ theme, animated = true, interactive = true }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const mousePosition = useRef({ x: 0, y: 0 });
 
@@ -32,11 +30,14 @@ export const Enhanced3DVisualization: React.FC<Enhanced3DVisualizationProps> = (
   }, [interactive]);
 
   // Cylinder Configuration
-  const cylinders = useMemo(() => [
-    { id: 1, y: -100 },
-    { id: 2, y: 0 },
-    { id: 3, y: 100 },
-  ], []);
+  const cylinders = useMemo(
+    () => [
+      { id: 1, y: -100 },
+      { id: 2, y: 0 },
+      { id: 3, y: 100 },
+    ],
+    [],
+  );
 
   const R = 80; // Radius of cylinders
   const H = 60; // Height of cylinders
@@ -54,7 +55,12 @@ export const Enhanced3DVisualization: React.FC<Enhanced3DVisualizationProps> = (
         x: Math.cos(angle) * radius,
         y: height,
         z: Math.sin(angle) * radius,
-        color: i % 3 === 0 ? theme.colors.accent : (i % 2 === 0 ? theme.colors.primary : theme.colors.secondary),
+        color:
+          i % 3 === 0
+            ? theme.colors.accent
+            : i % 2 === 0
+              ? theme.colors.primary
+              : theme.colors.secondary,
         size: Math.random() * 8 + 4,
         delay: Math.random() * 4,
       };
@@ -71,7 +77,9 @@ export const Enhanced3DVisualization: React.FC<Enhanced3DVisualizationProps> = (
         .map((n) => ({
           node: n,
           dist: Math.sqrt(
-            Math.pow(n.x - node.x, 2) + Math.pow(n.y - node.y, 2) + Math.pow(n.z - node.z, 2)
+            Math.pow(n.x - node.x, 2) +
+              Math.pow(n.y - node.y, 2) +
+              Math.pow(n.z - node.z, 2),
           ),
         }))
         .sort((a, b) => a.dist - b.dist)
@@ -297,7 +305,9 @@ export const Enhanced3DVisualization: React.FC<Enhanced3DVisualizationProps> = (
                   // @ts-ignore
                   "--start-z": `${H / 2 + 5}px`,
                   "--end-z": `${-H / 2 - 5}px`,
-                  animation: animated ? "scanRing 3s ease-in-out infinite alternate" : "none",
+                  animation: animated
+                    ? "scanRing 3s ease-in-out infinite alternate"
+                    : "none",
                   animationDelay: `${i * 0.8}s`,
                 }}
               />
@@ -365,7 +375,9 @@ export const Enhanced3DVisualization: React.FC<Enhanced3DVisualizationProps> = (
                   left: "-100%",
                   borderRadius: "50%",
                   border: `1px solid ${node.color}`,
-                  animation: animated ? "pulseNode 2s infinite ease-out" : "none",
+                  animation: animated
+                    ? "pulseNode 2s infinite ease-out"
+                    : "none",
                   animationDelay: `${node.delay}s`,
                   opacity: 0,
                 }}
@@ -419,11 +431,13 @@ export const Enhanced3DVisualization: React.FC<Enhanced3DVisualizationProps> = (
         }
         @keyframes scanRing {
           0% {
-            transform: translate(-50%, -50%) rotateX(90deg) translateZ(var(--start-z)) scale(1.1);
+            transform: translate(-50%, -50%) rotateX(90deg)
+              translateZ(var(--start-z)) scale(1.1);
             opacity: 0.8;
           }
           100% {
-            transform: translate(-50%, -50%) rotateX(90deg) translateZ(var(--end-z)) scale(1);
+            transform: translate(-50%, -50%) rotateX(90deg)
+              translateZ(var(--end-z)) scale(1);
             opacity: 0.2;
           }
         }

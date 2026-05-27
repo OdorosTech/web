@@ -15,6 +15,10 @@ export const designTokens = {
 
   // Typography Scale
   typography: {
+    fonts: {
+      heading: "var(--font-outfit), sans-serif",
+      body: "var(--font-plus-jakarta), sans-serif",
+    },
     fontSizes: {
       xs: "clamp(12px, 1vw, 14px)",
       sm: "clamp(14px, 1.2vw, 16px)",
