@@ -1,38 +1,78 @@
+// components/ui/Badge.tsx
 "use client";
+import React, { useState } from "react";
+import { designTokens } from "@/styles/design-system";
 import { useTheme } from "@/contexts/ThemeContext";
 import { getTheme } from "@/styles/theme";
-import { CheckCircleOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { AmbientGlow } from "../ui/AmbientGlow";
+
+interface ReasonItem {
+  text: string;
+  desc: string;
+  icon: React.ReactNode;
+}
 
 export default function WhyChooseUs() {
   const { theme } = useTheme();
   const colors = getTheme(theme);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const reasons = [
+  const reasons: ReasonItem[] = [
     {
-      text: "Expert team with deep industry knowledge",
-      icon: "🎯",
+      text: "Expert engineers with deep AI & GIS specialization",
+      desc: "Our senior technical developers hold specialized background knowledge in intelligence networks and mapping coordinates.",
+      icon: (
+        <svg
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <circle cx='12' cy='12' r='10' />
+          <line x1='12' y1='16' x2='12' y2='12' />
+          <line x1='12' y1='8' x2='12.01' y2='8' />
+        </svg>
+      ),
     },
     {
-      text: "Proven track record of successful projects",
-      icon: "🏆",
+      text: "Proven record of scalable software deployment",
+      desc: "Successful production-grade deployments utilizing container systems, microservices, and reliable server architectures.",
+      icon: (
+        <svg
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <polyline points='22 12 18 12 15 21 9 3 6 12 2 12' />
+        </svg>
+      ),
     },
     {
-      text: "Cutting-edge technology and methodologies",
-      icon: "🚀",
-    },
-    {
-      text: "Tailored solutions for your unique needs",
-      icon: "✨",
-    },
-    {
-      text: "Ongoing support and maintenance",
-      icon: "🛠️",
-    },
-    {
-      text: "Transparent communication and reporting",
-      icon: "📊",
+      text: "Custom solutions with clear communications",
+      desc: "Dedicated project coordinators, sprint outlines, and highly transparent status reporting dashboards.",
+      icon: (
+        <svg
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z' />
+        </svg>
+      ),
     },
   ];
 
@@ -45,20 +85,10 @@ export default function WhyChooseUs() {
         overflow: "hidden",
       }}
     >
-      {/* Background Glow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "5%",
-          width: "500px",
-          height: "500px",
-          background:
-            "radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%)",
-          borderRadius: "50%",
-          filter: "blur(80px)",
-          pointerEvents: "none",
-        }}
+      <AmbientGlow
+        position={{ bottom: "-10%", left: "5%" }}
+        color='#3b82f6'
+        theme={theme}
       />
 
       <div
@@ -67,137 +97,54 @@ export default function WhyChooseUs() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "48px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "64px",
             alignItems: "center",
           }}
         >
-          {/* Left Content */}
+          {/* Left Column: Typography Layout */}
           <div style={{ animation: "fadeInLeft 0.8s ease-out" }}>
-            <div
-              style={{
-                display: "inline-block",
-                padding: "8px 20px",
-                background:
-                  "linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.2) 100%)",
-                border: "1px solid rgba(59, 130, 246, 0.3)",
-                borderRadius: "20px",
-                marginBottom: "24px",
-                fontSize: "13px",
-                fontWeight: "600",
-                color: "#3b82f6",
-                letterSpacing: "0.5px",
-                textTransform: "uppercase",
-              }}
-            >
-              💎 Our Advantage
-            </div>
-
             <h2
               style={{
-                fontSize: "clamp(32px, 5vw, 48px)",
-                fontWeight: "700",
+                fontSize: "clamp(34px, 4.5vw, 46px)",
+                fontWeight: "800",
                 margin: "0 0 24px 0",
                 color: colors.text.primary,
-                lineHeight: "1.2",
+                lineHeight: "1.15",
+                letterSpacing: "-0.03em",
+                fontFamily: designTokens.typography.fonts.heading,
               }}
             >
-              Why Choose Odoros?
+              Engineered for absolute impact.
             </h2>
-
             <p
               style={{
                 fontSize: "17px",
                 color: colors.text.secondary,
-                lineHeight: "1.8",
-                marginBottom: "32px",
+                lineHeight: "1.75",
+                margin: 0,
+                fontWeight: "500",
+                fontFamily: designTokens.typography.fonts.body,
               }}
             >
-              We combine technical expertise with business acumen to deliver
-              solutions that drive real results. Our team of experts works
-              closely with you to understand your challenges and create custom
-              solutions that exceed expectations.
+              Odoros bridges high-level custom AI modeling with robust
+              geospatial coordinate positioning and enterprise software
+              infrastructure to deliver systems that scale effortlessly.
             </p>
-
-            {/* Stats */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: "24px",
-                marginTop: "40px",
-              }}
-            >
-              {[
-                { number: "10+", label: "Years Experience" },
-                { number: "500+", label: "Projects Completed" },
-              ].map((stat, index) => (
-                <div
-                  key={index}
-                  style={{
-                    padding: "20px",
-                    background:
-                      theme === "dark"
-                        ? "rgba(255, 255, 255, 0.03)"
-                        : "rgba(255, 255, 255, 0.5)",
-                    backdropFilter: "blur(10px)",
-                    border: `1px solid ${
-                      theme === "dark"
-                        ? "rgba(255, 255, 255, 0.08)"
-                        : "rgba(255, 255, 255, 0.3)"
-                    }`,
-                    borderRadius: "16px",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: "28px",
-                      fontWeight: "700",
-                      background:
-                        "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    {stat.number}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "13px",
-                      color: colors.text.secondary,
-                      fontWeight: "500",
-                    }}
-                  >
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right Content - Glass Card */}
+          {/* Right Column: Airbnb Interactive List */}
           <div style={{ animation: "fadeInRight 0.8s ease-out" }}>
             <div
               style={{
-                padding: "48px",
+                padding: "40px",
                 background:
-                  theme === "dark"
-                    ? "rgba(255, 255, 255, 0.03)"
-                    : "rgba(255, 255, 255, 0.7)",
-                backdropFilter: "blur(20px) saturate(180%)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%)",
-                border: `1px solid ${
-                  theme === "dark"
-                    ? "rgba(255, 255, 255, 0.08)"
-                    : "rgba(255, 255, 255, 0.3)"
-                }`,
-                borderRadius: "24px",
-                boxShadow:
-                  theme === "dark"
-                    ? "0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)"
-                    : "0 8px 32px rgba(31, 38, 135, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8)",
+                  theme === "dark" ? "rgba(255, 255, 255, 0.01)" : "#ffffff",
+                border: `1px solid ${theme === "dark" ? "rgba(255, 255, 255, 0.06)" : "rgba(0, 0, 0, 0.06)"}`,
+                borderRadius: "28px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "24px",
               }}
             >
               {reasons.map((reason, index) => (
@@ -206,60 +153,62 @@ export default function WhyChooseUs() {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   style={{
-                    marginBottom: index < reasons.length - 1 ? "24px" : "0",
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: "start",
+                    gap: "20px",
                     padding: "16px",
-                    borderRadius: "12px",
+                    borderRadius: "16px",
                     background:
                       hoveredIndex === index
                         ? theme === "dark"
-                          ? "rgba(59, 130, 246, 0.1)"
-                          : "rgba(59, 130, 246, 0.05)"
+                          ? "rgba(255, 255, 255, 0.02)"
+                          : "rgba(0, 0, 0, 0.02)"
                         : "transparent",
-                    transition: "all 0.3s ease",
+                    transition: "all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1)",
                     transform:
                       hoveredIndex === index
-                        ? "translateX(8px)"
+                        ? "translateX(6px)"
                         : "translateX(0)",
                     cursor: "pointer",
                   }}
                 >
                   <div
                     style={{
-                      fontSize: "24px",
-                      marginRight: "16px",
-                      filter:
+                      color:
                         hoveredIndex === index
-                          ? "drop-shadow(0 0 8px rgba(59, 130, 246, 0.5))"
-                          : "none",
-                      transition: "all 0.3s ease",
+                          ? "#ac188c"
+                          : colors.text.secondary,
+                      transition: "color 0.25s ease",
+                      flexShrink: 0,
+                      marginTop: "2px",
                     }}
                   >
                     {reason.icon}
                   </div>
-                  <CheckCircleOutlined
-                    style={{
-                      color: "#3b82f6",
-                      fontSize: "20px",
-                      marginRight: "16px",
-                      filter:
-                        hoveredIndex === index
-                          ? "drop-shadow(0 0 8px rgba(59, 130, 246, 0.5))"
-                          : "none",
-                      transition: "all 0.3s ease",
-                    }}
-                  />
-                  <span
-                    style={{
-                      fontSize: "16px",
-                      color: colors.text.primary,
-                      fontWeight: hoveredIndex === index ? "600" : "500",
-                      transition: "all 0.3s ease",
-                    }}
-                  >
-                    {reason.text}
-                  </span>
+                  <div>
+                    <div
+                      style={{
+                        fontSize: "16px",
+                        color: colors.text.primary,
+                        fontWeight: "700",
+                        fontFamily: designTokens.typography.fonts.heading,
+                        marginBottom: "6px",
+                      }}
+                    >
+                      {reason.text}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "13.5px",
+                        color: colors.text.secondary,
+                        lineHeight: "1.55",
+                        fontWeight: "500",
+                        fontFamily: designTokens.typography.fonts.body,
+                      }}
+                    >
+                      {reason.desc}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -271,7 +220,7 @@ export default function WhyChooseUs() {
         @keyframes fadeInLeft {
           from {
             opacity: 0;
-            transform: translateX(-30px);
+            transform: translateX(-20px);
           }
           to {
             opacity: 1;
@@ -281,7 +230,7 @@ export default function WhyChooseUs() {
         @keyframes fadeInRight {
           from {
             opacity: 0;
-            transform: translateX(30px);
+            transform: translateX(20px);
           }
           to {
             opacity: 1;

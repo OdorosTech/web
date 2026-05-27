@@ -51,17 +51,18 @@ export default function Header() {
           width: "100%",
           zIndex: 1000,
           padding: "0 24px",
-          // background: scrolled
-          //   ? theme === "dark"
-          //     ? "rgba(30, 20, 40, 0.3)" // dark glass tint
-          //     : "rgba(255, 255, 255, 0.3)" // light glass tint
-          //   : "transparent",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          borderRadius: "0 0 16px 16px",
-          transition: "all 0.4s ease",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          transition: "all 0.3s ease",
           color: colors.text.primary,
-          background: `radial-gradient(circle, rgba(172, 24, 140, 0.1) 0%, transparent 90%)`,
+          background:
+            theme === "dark"
+              ? "rgba(10, 10, 15, 0.75)"
+              : "rgba(255, 255, 255, 0.8)",
+          borderBottom:
+            theme === "dark"
+              ? "1px solid rgba(255, 255, 255, 0.08)"
+              : "1px solid rgba(0, 0, 0, 0.06)",
         }}
       >
         <div
@@ -142,19 +143,29 @@ export default function Header() {
                       display: "flex",
                       alignItems: "center",
                       gap: "8px",
-                      padding: "6px 12px",
-                      borderRadius: "8px",
+                      padding: "8px 16px",
+                      borderRadius: "100px",
                       color: isActive ? "#ac188c" : colors.text.secondary,
-                      fontWeight: isActive ? "600" : "500",
-                      fontSize: "15px",
-                      transition: "all 0.3s ease",
-
-                      // background: isActive
-                      //   ? theme === "dark"
-                      //     ? "rgba(172, 24, 140, 0.15)"
-                      //     : "rgba(172, 24, 140, 0.08)"
-                      //   : "transparent",
+                      fontWeight: isActive ? "700" : "600",
+                      fontSize: "14px",
+                      transition: "all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1)",
+                      fontFamily: "var(--font-outfit)",
                       cursor: "pointer",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.color = colors.text.primary;
+                        e.currentTarget.style.background =
+                          theme === "dark"
+                            ? "rgba(255, 255, 255, 0.04)"
+                            : "rgba(0, 0, 0, 0.03)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.color = colors.text.secondary;
+                        e.currentTarget.style.background = "transparent";
+                      }
                     }}
                   >
                     {item.label}
@@ -175,51 +186,63 @@ export default function Header() {
                 justifyContent: "center",
                 width: "40px",
                 height: "40px",
-                borderRadius: "8px",
-                transition: "all 0.3s ease",
+                borderRadius: "50%",
+                transition: "all 0.2s ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background =
                   theme === "dark"
-                    ? "rgba(172, 24, 140, 0.15)"
-                    : "rgba(172, 24, 140, 0.08)";
-                e.currentTarget.style.color = "#ac188c";
+                    ? "rgba(255, 255, 255, 0.05)"
+                    : "rgba(0, 0, 0, 0.04)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = colors.text.primary;
               }}
             />
 
-            {/* CTA Button */}
-            {/* <Button
-              type="primary"
-              style={{
-                background: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
-                border: "none",
-                borderRadius: "8px",
-                height: "40px",
-                padding: "0 24px",
-                fontWeight: "600",
-                boxShadow: "0 0 12px rgba(172, 24, 140, 0.7)",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow =
-                  "0 0 20px rgba(172, 24, 140, 1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 0 12px rgba(172, 24, 140, 0.7)";
-              }}
-            >
-              <Link href="/contact" style={{ textDecoration: "none" }}>
-                <PhoneOutlined style={{ marginRight: "8px" }} />
-                Contact Us
-              </Link>
-            </Button> */}
+            {/* Premium Outline Pill Contact Button */}
+            <Link href='/contact' style={{ textDecoration: "none" }}>
+              <button
+                style={{
+                  border: "1.5px solid #ac188c",
+                  background: "transparent",
+                  color: "#ac188c",
+                  borderRadius: "100px",
+                  height: "40px",
+                  padding: "0 20px",
+                  fontWeight: "700",
+                  fontSize: "14px",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  fontFamily: "var(--font-outfit)",
+                  transition: "all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#ac188c";
+                  e.currentTarget.style.color = "#ffffff";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "#ac188c";
+                }}
+              >
+                <svg
+                  width='14'
+                  height='14'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z' />
+                </svg>
+                <span>Contact Us</span>
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

@@ -7,6 +7,7 @@ import {
   MailOutlined,
   PhoneOutlined,
   EnvironmentOutlined,
+  FacebookOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 import Image from "next/image";
@@ -43,15 +44,24 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: <TwitterOutlined />,
-      href: "https://twitter.com",
+      href: "https://x.com/odorostech",
       label: "Twitter",
     },
     {
       icon: <LinkedinOutlined />,
-      href: "https://linkedin.com",
+      href: "https://linkedin.com/company/odorostech",
       label: "LinkedIn",
     },
-    { icon: <GithubOutlined />, href: "https://github.com", label: "GitHub" },
+    {
+      icon: <GithubOutlined />,
+      href: "https://github.com/odorostech",
+      label: "GitHub",
+    },
+    {
+      icon: <FacebookOutlined />,
+      href: "https://facebook.com/odorostech",
+      label: "Facebook",
+    },
   ];
 
   return (
@@ -124,12 +134,16 @@ export default function Footer() {
             <div style={{ marginBottom: "24px" }}>
               <div style={{ marginBottom: "8px", marginLeft: "-8px" }}>
                 <Link
-                  href="/"
-                  style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+                  href='/'
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                  }}
                 >
                   <Image
-                    src="/images/odoros.png"
-                    alt="Odoros Logo"
+                    src='/images/odoros.png'
+                    alt='Odoros Logo'
                     width={180}
                     height={100}
                   />
@@ -143,15 +157,16 @@ export default function Footer() {
                   marginBottom: "24px",
                 }}
               >
-                Leading provider of AI/ML, Data Analytics, Consulting, and
-                Software Development services. Transforming businesses through
-                innovative technology solutions.
+                Odoros Technologies is a dynamic and forward-thinking technology
+                firm headquartered in Mogadishu, Somalia. Established in 2024,
+                we are committed to harnessing the power of technology to drive
+                transformation, empower organizations, and improve livelihoods.
               </p>
 
               {/* Contact Info */}
               <Space
-                direction="vertical"
-                size="small"
+                direction='vertical'
+                size='small'
                 style={{ width: "100%" }}
               >
                 <div
@@ -163,7 +178,7 @@ export default function Footer() {
                   }}
                 >
                   <MailOutlined style={{ color: "#ac188c" }} />
-                  <span style={{ fontSize: "14px" }}>hello@odoros.com</span>
+                  <span style={{ fontSize: "14px" }}>info@odoros.com</span>
                 </div>
                 <div
                   style={{
@@ -185,7 +200,9 @@ export default function Footer() {
                   }}
                 >
                   <EnvironmentOutlined style={{ color: "#ac188c" }} />
-                  <span style={{ fontSize: "14px" }}>Taleh, Hodan, Mogadishu, Somalia</span>
+                  <span style={{ fontSize: "14px" }}>
+                    Taleh, Hodan, Mogadishu, Somalia
+                  </span>
                 </div>
               </Space>
             </div>
@@ -203,7 +220,7 @@ export default function Footer() {
             >
               Services
             </h4>
-            <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+            <Space direction='vertical' size='middle' style={{ width: "100%" }}>
               {footerLinks.services.map((link, index) => (
                 <Link
                   key={index}
@@ -242,7 +259,7 @@ export default function Footer() {
             >
               Company
             </h4>
-            <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+            <Space direction='vertical' size='middle' style={{ width: "100%" }}>
               {footerLinks.company.map((link, index) => (
                 <Link
                   key={index}
@@ -281,7 +298,7 @@ export default function Footer() {
             >
               Resources
             </h4>
-            <Space direction="vertical" size="middle" style={{ width: "100%" }}>
+            <Space direction='vertical' size='middle' style={{ width: "100%" }}>
               {footerLinks.resources.map((link, index) => (
                 <Link
                   key={index}
@@ -314,7 +331,7 @@ export default function Footer() {
         />
 
         {/* Bottom Footer */}
-        <Row justify="space-between" align="middle" gutter={[16, 16]}>
+        <Row justify='space-between' align='middle' gutter={[16, 16]}>
           <Col xs={24} sm={12}>
             <p
               style={{
@@ -323,7 +340,7 @@ export default function Footer() {
                 margin: 0,
                 textAlign: "center",
               }}
-              className="copyright-text"
+              className='copyright-text'
             >
               © {new Date().getFullYear()} Odoros Technologies. All rights
               reserved.
@@ -337,14 +354,14 @@ export default function Footer() {
                 justifyContent: "center",
                 gap: "16px",
               }}
-              className="social-links"
+              className='social-links'
             >
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target='_blank'
+                  rel='noopener noreferrer'
                   aria-label={social.label}
                   style={{
                     width: "40px",
@@ -394,7 +411,7 @@ export default function Footer() {
         >
           <Space split={<span style={{ color: colors.text.tertiary }}>•</span>}>
             <Link
-              href="/privacy"
+              href='/privacy'
               style={{
                 color: colors.text.tertiary,
                 fontSize: "13px",
@@ -411,7 +428,7 @@ export default function Footer() {
               Privacy Policy
             </Link>
             <Link
-              href="/terms"
+              href='/terms'
               style={{
                 color: colors.text.tertiary,
                 fontSize: "13px",
@@ -428,7 +445,7 @@ export default function Footer() {
               Terms of Service
             </Link>
             <Link
-              href="/cookies"
+              href='/cookies'
               style={{
                 color: colors.text.tertiary,
                 fontSize: "13px",

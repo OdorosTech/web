@@ -29,8 +29,8 @@ export default function Careers() {
     <div style={{ padding: "80px 20px", marginTop: 64 }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <PageHeader
-          badge="🚀 Careers at Odoros"
-          title="Join Our Team"
+          // badge='🚀 Careers at Odoros'
+          title='Join Our Team'
           description="Be part of a team that's shaping the future of AI and data analytics"
         />
         <Paragraph
@@ -61,7 +61,7 @@ export default function Careers() {
             </ul>
           </Col>
           <Col xs={24} md={12}>
-            <Card style={{ background: "#f5f5f5" }}>
+            <Card>
               <Title level={3}>Our Culture</Title>
               <Paragraph>
                 We foster an environment of innovation, continuous learning, and
@@ -94,8 +94,8 @@ export default function Careers() {
                   {position.description ||
                     position.content.substring(0, 150) + "..."}
                 </Paragraph>
-                <Link href="/contact">
-                  <Button type="primary">Apply Now</Button>
+                <Link href={`/careers/${position.slug}`}>
+                  <Button type='primary'>Apply Now</Button>
                 </Link>
               </Card>
             </Col>

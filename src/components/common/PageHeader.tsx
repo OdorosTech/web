@@ -10,7 +10,7 @@ interface PageHeaderProps {
 }
 
 export default function PageHeader({
-  badge = "✨ What We Offer",
+  badge = "",
   title,
   description,
   badgeColor = "#ac188c",

@@ -17,15 +17,15 @@ export default function BlogPage() {
   const { theme } = useTheme();
   const router = useRouter();
 
-//   useEffect(() => {
-//     getBlogPosts().then(setBlogPosts);
-//   }, []);
+  //   useEffect(() => {
+  //     getBlogPosts().then(setBlogPosts);
+  //   }, []);
 
   useEffect(() => {
     getBlogPosts().then(setBlogPosts);
   }, []);
 
-  console.log({blogPosts})
+  // console.log({blogPosts})
 
   const isDarkMode = theme === "dark";
 
@@ -55,9 +55,9 @@ export default function BlogPage() {
   return (
     <PageContainer>
       <PageHeader
-        badge="📚 Knowledge Hub"
-        title="Blog & Insights"
-        description="Expert insights on data science, AI, and technology trends"
+        badge='📚 Knowledge Hub'
+        title='Blog & Insights'
+        description='Expert insights on data science, AI, and technology trends'
       />
 
       {/* Blog Grid */}
@@ -87,9 +87,9 @@ export default function BlogPage() {
 
       {/* CTA Section */}
       <CTASection
-        title="Stay Updated with Our Latest Insights"
-        description="Subscribe to our newsletter and never miss an update"
-        buttonText="Subscribe Now →"
+        title='Stay Updated with Our Latest Insights'
+        description='Subscribe to our newsletter and never miss an update'
+        buttonText='Subscribe Now →'
         onButtonClick={() => {
           console.log("Subscribe clicked");
         }}

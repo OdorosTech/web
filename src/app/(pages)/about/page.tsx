@@ -39,11 +39,27 @@ export default function About() {
     <div style={{ padding: "80px 20px", marginTop: 64 }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <PageHeader
-          badge=" 🌟 Our Story & Vision"
-          title="About Odoros Technologies"
-          description="Passionate about innovation and dedicated to your success"
+          // badge=' 🌟 Our Story & Vision'
+          title='About Odoros Technologies'
+          description='Passionate about innovation and dedicated to your success'
         />
-
+        <Paragraph style={{ fontSize: 16, lineHeight: 1.8 }}>
+          Odoros Technologies is a dynamic and forward-thinking technology firm
+          headquartered in Mogadishu, Somalia. Established in 2024, we are
+          committed to harnessing the power of technology to drive
+          transformation, empower organizations, and improve livelihoods. Our
+          expertise spans multiple domains, including data science, business
+          intelligence, software development, project management, and capacity
+          building. We believe that technology, when applied thoughtfully, can
+          solve critical challenges, foster economic growth, and enhance
+          efficiency across industries. At Odoros Technologies, we combine
+          innovation, expertise, and strategic thinking to deliver tailored
+          solutions that create lasting impact. Our team consists of highly
+          skilled professionals — including data scientists, software engineers,
+          project managers, and business analysts — who are dedicated to
+          delivering state-of-the-art solutions that help businesses and
+          organizations achieve their goals.
+        </Paragraph>
         <Row gutter={[48, 48]} style={{ marginBottom: 80 }}>
           <Col xs={24} md={12}>
             <Title level={2}>Our Mission</Title>
@@ -64,7 +80,6 @@ export default function About() {
             </Paragraph>
           </Col>
         </Row>
-
         <Title level={2} style={{ textAlign: "center", marginBottom: 40 }}>
           Our Values
         </Title>

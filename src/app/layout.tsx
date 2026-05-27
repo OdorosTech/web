@@ -1,43 +1,3 @@
-// import type { Metadata } from "next";
-// import { AntdRegistry } from "@ant-design/nextjs-registry";
-// import { ConfigProvider } from "antd";
-// import Header from "@/components/layout/Header";
-// import Footer from "@/components/layout/Footer";
-// import "./globals.css";
-
-// export const metadata: Metadata = {
-//   title: "Odoros Technologies - AI & Data Analytics Solutions",
-//   description:
-//     "Leading provider of AI/ML, Data Analytics, Consulting, and Software Development services",
-// };
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang="en">
-//       <body>
-//         <AntdRegistry>
-//           <ConfigProvider
-//             theme={{
-//               token: {
-//                 colorPrimary: "#ac188c",
-//                 borderRadius: 8,
-//               },
-//             }}
-//           >
-//             <Header />
-//             <main>{children}</main>
-//             <Footer />
-//           </ConfigProvider>
-//         </AntdRegistry>
-//       </body>
-//     </html>
-//   );
-// }
-
 import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Header from "@/components/layout/Header";
@@ -62,9 +22,22 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Odoros Technologies - AI & Data Analytics Solutions",
+  title: "Odoros Technologies - Innovating for a smarter future",
   description:
-    "Leading provider of AI/ML, Data Analytics, Consulting, and Software Development services",
+    "Odoros Technologies delivers custom software solutions with AI, data analytics, and cloud expertise to transform your business.",
+  keywords: [
+    "AI Development",
+    "Data Analytics",
+    "Custom Software",
+    "Cloud Solutions",
+    "Machine Learning",
+    "Big Data",
+    "Odoros Technologies",
+    "Software Consulting",
+    "Tech Solutions",
+  ],
+  authors: [{ name: "Odoros Technologies" }],
+  creator: "Odoros Technologies",
 };
 
 export default function RootLayout({

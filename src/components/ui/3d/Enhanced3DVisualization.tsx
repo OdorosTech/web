@@ -1,3 +1,4 @@
+"use client";
 import React, { useMemo, useEffect, useRef } from "react";
 import { GlassmorphismTheme } from "@/styles/design-system";
 
@@ -25,6 +26,7 @@ export const Enhanced3DVisualization: React.FC<
       }
     };
     const container = containerRef.current;
+    if (!container) return;
     container.addEventListener("mousemove", handleMouseMove);
     return () => container.removeEventListener("mousemove", handleMouseMove);
   }, [interactive]);
@@ -455,3 +457,5 @@ export const Enhanced3DVisualization: React.FC<
     </div>
   );
 };
+
+export default Enhanced3DVisualization;

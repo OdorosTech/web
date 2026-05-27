@@ -52,9 +52,9 @@ export default function Industries() {
   return (
     <PageContainer>
       <PageHeader
-        badge="✨ Explore Our Expertise"
-        title="Industries We Serve"
-        description="Delivering specialized solutions across diverse sectors"
+        badge='✨ Explore Our Expertise'
+        title='Industries We Serve'
+        description='Delivering specialized solutions across diverse sectors'
       />
 
       {/* Services Grid */}
@@ -88,12 +88,12 @@ export default function Industries() {
 
       {/* CTA Section */}
       <CTASection
-        title="Ready to Transform Your Business?"
+        title='Ready to Transform Your Business?'
         description="Let's discuss how our solutions can help you achieve your goals"
-        buttonText="Get Started Today →"
-        onButtonClick={() => {
-          console.log("CTA clicked");
-        }}
+        buttonText='Get Started Today →'
+        // onButtonClick={() => {
+        //   console.log("CTA clicked");
+        // }}
       />
     </PageContainer>
   );

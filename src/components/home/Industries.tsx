@@ -1,13 +1,8 @@
 "use client";
+import React, { useState } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { getTheme } from "@/styles/theme";
-import {
-  ThunderboltOutlined,
-  HeartOutlined,
-  ShoppingCartOutlined,
-  ToolOutlined,
-} from "@ant-design/icons";
-import { useState } from "react";
+import { designTokens } from "@/styles/design-system";
 
 export default function Industries() {
   const { theme } = useTheme();
@@ -16,28 +11,84 @@ export default function Industries() {
 
   const industries = [
     {
-      icon: <ThunderboltOutlined />,
       name: "Finance",
       color: "#3b82f6",
-      gradient: "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
+      desc: "Distributed ledger nodes, transaction security, and automated fiscal models.",
+      icon: (
+        <svg
+          width='32'
+          height='32'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <line x1='12' y1='1' x2='12' y2='23' />
+          <path d='M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' />
+        </svg>
+      ),
     },
     {
-      icon: <HeartOutlined />,
       name: "Healthcare",
       color: "#10b981",
-      gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+      desc: "Patient care diagnostic AI, coordinate GIS logistics, and private analytics.",
+      icon: (
+        <svg
+          width='32'
+          height='32'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <path d='M22 12h-4l-3 9L9 3l-3 9H2' />
+        </svg>
+      ),
     },
     {
-      icon: <ShoppingCartOutlined />,
       name: "Retail",
       color: "#f97316",
-      gradient: "linear-gradient(135deg, #f97316 0%, #ea580c 100%)",
+      desc: "Predictive inventory forecasting, demand pipelines, and custom store software.",
+      icon: (
+        <svg
+          width='32'
+          height='32'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <circle cx='9' cy='21' r='1' />
+          <circle cx='20' cy='21' r='1' />
+          <path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6' />
+        </svg>
+      ),
     },
     {
-      icon: <ToolOutlined />,
       name: "Manufacturing",
       color: "#ac188c",
-      gradient: "linear-gradient(135deg, #ac188c 0%, #9333ea 100%)",
+      desc: "Assembly predictive maintenance, routing coordination, and visual automated checks.",
+      icon: (
+        <svg
+          width='32'
+          height='32'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <circle cx='12' cy='12' r='3' />
+          <path d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z' />
+        </svg>
+      ),
     },
   ];
 
@@ -50,7 +101,7 @@ export default function Industries() {
         overflow: "hidden",
       }}
     >
-      {/* Background Glow */}
+      {/* Background soft ambient halo */}
       <div
         style={{
           position: "absolute",
@@ -58,8 +109,7 @@ export default function Industries() {
           right: "10%",
           width: "400px",
           height: "400px",
-          background:
-            "radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%)",
+          background: `radial-gradient(circle, ${theme === "dark" ? "rgba(249, 115, 22, 0.06)" : "rgba(249, 115, 22, 0.03)"} 0%, transparent 75%)`,
           borderRadius: "50%",
           filter: "blur(80px)",
           pointerEvents: "none",
@@ -69,62 +119,72 @@ export default function Industries() {
       <div
         style={{ maxWidth: "1200px", margin: "0 auto", position: "relative" }}
       >
-        {/* Header */}
+        {/* Header Block with Airbnb-like clean typography spacing */}
         <div
           style={{
-            textAlign: "center",
-            marginBottom: "80px",
+            textAlign: "left",
+            marginBottom: "72px",
             animation: "fadeInDown 0.8s ease-out",
           }}
         >
-          <div
+          {/* <div
             style={{
               display: "inline-block",
-              padding: "8px 20px",
+              padding: "6px 14px",
               background:
-                "linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(234, 88, 12, 0.2) 100%)",
-              border: "1px solid rgba(249, 115, 22, 0.3)",
-              borderRadius: "20px",
-              marginBottom: "24px",
-              fontSize: "13px",
-              fontWeight: "600",
-              color: "#f97316",
-              letterSpacing: "0.5px",
+                theme === "dark"
+                  ? "rgba(255, 255, 255, 0.06)"
+                  : "rgba(0, 0, 0, 0.04)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              borderRadius: "100px",
+              marginBottom: "20px",
+              fontSize: "12px",
+              fontWeight: "700",
+              color: colors.text.secondary,
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
+              fontFamily: designTokens.typography.fonts.heading,
             }}
           >
-            🌐 Our Expertise
-          </div>
+            🌐 Sectors
+          </div> */}
+
           <h2
             style={{
-              fontSize: "clamp(32px, 5vw, 48px)",
-              fontWeight: "700",
+              fontSize: "clamp(32px, 4vw, 44px)",
+              fontWeight: "800",
               margin: "0 0 16px 0",
               color: colors.text.primary,
-              lineHeight: "1.2",
+              lineHeight: "1.15",
+              letterSpacing: "-0.03em",
+              fontFamily: designTokens.typography.fonts.heading,
             }}
           >
-            Industries We Serve
+            Industries we serve.
           </h2>
+
           <p
             style={{
-              fontSize: "18px",
+              fontSize: "17px",
               color: colors.text.secondary,
               maxWidth: "600px",
-              margin: "0 auto",
               lineHeight: "1.6",
+              fontWeight: "500",
+              margin: 0,
+              fontFamily: designTokens.typography.fonts.body,
             }}
           >
-            Delivering specialized solutions across diverse sectors
+            Delivering specialized intelligence networks and scalable
+            application layers tailored across diverse industries.
           </p>
         </div>
 
-        {/* Industries Grid */}
+        {/* Clean Industries Grid */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "32px",
+            gap: "24px",
           }}
         >
           {industries.map((industry, index) => (
@@ -136,80 +196,48 @@ export default function Industries() {
                 position: "relative",
                 padding: "48px 32px",
                 background:
-                  theme === "dark"
-                    ? "rgba(255, 255, 255, 0.03)"
-                    : "rgba(255, 255, 255, 0.7)",
-                backdropFilter: "blur(20px) saturate(180%)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%)",
-                border: `1px solid ${
+                  theme === "dark" ? "rgba(255, 255, 255, 0.02)" : "#ffffff",
+                border:
                   hoveredIndex === index
-                    ? industry.color
+                    ? `1.5px solid ${industry.color}`
                     : theme === "dark"
-                      ? "rgba(255, 255, 255, 0.08)"
-                      : "rgba(255, 255, 255, 0.3)"
-                }`,
-                borderRadius: "24px",
-                textAlign: "center",
+                      ? "1px solid rgba(255, 255, 255, 0.06)"
+                      : "1px solid rgba(0, 0, 0, 0.06)",
+                borderRadius: "20px",
                 cursor: "pointer",
-                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                transition: "all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1)",
                 transform:
-                  hoveredIndex === index
-                    ? "translateY(-12px) scale(1.03)"
-                    : "translateY(0) scale(1)",
+                  hoveredIndex === index ? "translateY(-6px)" : "translateY(0)",
                 boxShadow:
                   hoveredIndex === index
-                    ? `0 24px 48px ${industry.color}33, 0 0 80px ${industry.color}1A, inset 0 1px 0 rgba(255, 255, 255, 0.1)`
-                    : theme === "dark"
-                      ? "0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)"
-                      : "0 4px 16px rgba(31, 38, 135, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8)",
+                    ? "0 20px 40px rgba(0, 0, 0, 0.12)"
+                    : "0 4px 16px rgba(0, 0, 0, 0.01)",
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s backwards`,
               }}
             >
-              {/* Glow Effect */}
-              {hoveredIndex === index && (
-                <>
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: "-2px",
-                      background: industry.gradient,
-                      borderRadius: "24px",
-                      opacity: "0.2",
-                      filter: "blur(20px)",
-                      zIndex: -1,
-                      animation: "pulse 2s ease-in-out infinite",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      width: "200px",
-                      height: "200px",
-                      background: `radial-gradient(circle, ${industry.color}20 0%, transparent 70%)`,
-                      borderRadius: "50%",
-                      filter: "blur(40px)",
-                      zIndex: -1,
-                    }}
-                  />
-                </>
-              )}
-
-              {/* Icon */}
+              {/* Circular Outline Icon Container */}
               <div
                 style={{
-                  fontSize: "72px",
-                  color: industry.color,
-                  marginBottom: "24px",
-                  filter:
+                  width: "64px",
+                  height: "64px",
+                  borderRadius: "50%",
+                  border:
                     hoveredIndex === index
-                      ? `drop-shadow(0 0 24px ${industry.color})`
-                      : "none",
+                      ? `1.5px solid ${industry.color}`
+                      : theme === "dark"
+                        ? "1.5px solid rgba(255, 255, 255, 0.1)"
+                        : "1.5px solid rgba(0, 0, 0, 0.1)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color:
+                    hoveredIndex === index
+                      ? industry.color
+                      : colors.text.primary,
+                  marginBottom: "28px",
                   transition: "all 0.3s ease",
-                  display: "inline-block",
-                  transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
+                  transform:
+                    hoveredIndex === index ? "scale(1.05)" : "scale(1)",
                 }}
               >
                 {industry.icon}
@@ -218,27 +246,29 @@ export default function Industries() {
               {/* Name */}
               <h3
                 style={{
-                  fontSize: "24px",
-                  fontWeight: "600",
+                  fontSize: "20px",
+                  fontWeight: "700",
                   color: colors.text.primary,
-                  margin: 0,
-                  transition: "all 0.3s ease",
+                  margin: "0 0 12px 0",
+                  fontFamily: designTokens.typography.fonts.heading,
                 }}
               >
                 {industry.name}
               </h3>
 
-              {/* Decorative Line */}
-              <div
+              {/* Desc */}
+              <p
                 style={{
-                  width: hoveredIndex === index ? "60px" : "40px",
-                  height: "3px",
-                  background: industry.gradient,
-                  margin: "20px auto 0",
-                  borderRadius: "2px",
-                  transition: "all 0.3s ease",
+                  fontSize: "13.5px",
+                  color: colors.text.secondary,
+                  lineHeight: "1.6",
+                  margin: 0,
+                  fontWeight: "500",
+                  fontFamily: designTokens.typography.fonts.body,
                 }}
-              />
+              >
+                {industry.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -248,7 +278,7 @@ export default function Industries() {
         @keyframes fadeInDown {
           from {
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translateY(-16px);
           }
           to {
             opacity: 1;
@@ -258,20 +288,11 @@ export default function Industries() {
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(16px);
           }
           to {
             opacity: 1;
             transform: translateY(0);
-          }
-        }
-        @keyframes pulse {
-          0%,
-          100% {
-            opacity: 0.2;
-          }
-          50% {
-            opacity: 0.3;
           }
         }
       `}</style>

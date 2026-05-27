@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import * as Icons from "@ant-design/icons";
 import { useTheme } from "@/contexts/ThemeContext";
 import { getTheme } from "@/styles/theme";
+import Link from "next/link";
 
 interface GlowingCardProps {
   title: string;
@@ -15,6 +16,7 @@ interface GlowingCardProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   index?: number;
+  slug?: string;
 }
 
 export default function GlowingCard({
@@ -28,6 +30,7 @@ export default function GlowingCard({
   onMouseEnter,
   onMouseLeave,
   index = 0,
+  slug,
 }: GlowingCardProps) {
   const IconComponent = icon ? (Icons as any)[icon] : Icons.StarOutlined;
   const { theme } = useTheme();
@@ -39,113 +42,89 @@ export default function GlowingCard({
       onMouseLeave={onMouseLeave}
       style={{
         position: "relative",
-        background:
-          theme === "dark"
-            ? "rgba(255, 255, 255, 0.05)" // subtle light tint for dark theme
-            : "rgba(255, 255, 255, 0.3)", // subtle white tint for light theme
+        background: theme === "dark" ? "rgba(255, 255, 255, 0.02)" : "#ffffff",
         border: isHovered
-          ? `1px solid ${color}40`
-          : `1px solid ${colors.border.primary}`,
-        borderRadius: "16px",
-        padding: "32px",
-        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          ? `1.5px solid ${color}`
+          : theme === "dark"
+            ? "1px solid rgba(255, 255, 255, 0.06)"
+            : "1px solid rgba(0, 0, 0, 0.06)",
+        borderRadius: "20px",
+        padding: "36px",
+        transition: "all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1)",
         transform: isHovered ? "translateY(-6px)" : "translateY(0)",
         boxShadow: isHovered
-          ? `0 8px 24px ${color}30` // softer, more transparent glow
-          : `0 4px 12px rgba(0,0,0,0.05)`, // subtle shadow when not hovered
+          ? "0 20px 40px rgba(0, 0, 0, 0.12)"
+          : "0 4px 16px rgba(0, 0, 0, 0.01)",
         cursor: "pointer",
         animation: `fadeInUp 0.6s ease-out ${index * 0.1}s backwards`,
         overflow: "hidden",
-        backdropFilter: "blur(16px)",
-        WebkitBackdropFilter: "blur(16px)",
       }}
     >
-      {/* Top gradient bar */}
+      {/* Circle Outline Icon Wrap */}
       <div
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "3px",
-          background: gradient,
-          opacity: isHovered ? 1 : 0,
-          transition: "opacity 0.3s ease",
-          boxShadow: isHovered ? `0 0 12px ${color}50` : "none", // softer glow
-          borderRadius: "0 0 12px 12px",
-        }}
-      />
-
-      {/* Icon container */}
-      <div
-        style={{
-          width: "64px",
-          height: "64px",
-          borderRadius: "16px",
-          background: isHovered ? gradient : `${color}15`,
+          width: "56px",
+          height: "56px",
+          borderRadius: "50%",
+          border: isHovered
+            ? `1.5px solid ${color}`
+            : theme === "dark"
+              ? "1.5px solid rgba(255, 255, 255, 0.1)"
+              : "1.5px solid rgba(0, 0, 0, 0.1)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: "32px",
-          marginBottom: "20px",
-          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-          transform: isHovered
-            ? "scale(1.05) rotate(3deg)"
-            : "scale(1) rotate(0deg)",
-          boxShadow: isHovered
-            ? `0 6px 16px ${color}30, 0 0 0 3px ${color}10`
-            : "none",
-          position: "relative",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
+          marginBottom: "24px",
+          color: color,
+          transition: "all 0.3s ease",
+          transform: isHovered ? "scale(1.05)" : "scale(1)",
         }}
       >
-        <span
-          style={{
-            filter: isHovered ? "brightness(1.1)" : "none",
-            transition: "filter 0.3s ease",
-          }}
-        >
-          <IconComponent style={{ fontSize: 48, color: color }} />
-        </span>
+        <IconComponent style={{ fontSize: 22 }} />
       </div>
 
-      {/* Title */}
+      {/* Title (Outfit font) */}
       <h3
         style={{
           fontSize: "20px",
-          fontWeight: "600",
+          fontWeight: "700",
           color: colors.text.primary,
           marginBottom: "12px",
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto',
-          textShadow: "0 0 4px rgba(0,0,0,0.1)", // subtle text shadow for clarity
+          fontFamily: "var(--font-outfit)",
         }}
       >
         {title}
       </h3>
 
-      {/* Description */}
+      {/* Description (Plus Jakarta Sans) */}
       <p
         style={{
           fontSize: "14px",
           color: colors.text.secondary,
           lineHeight: "1.6",
           marginBottom: "20px",
+          fontWeight: "500",
+          fontFamily: "var(--font-plus-jakarta)",
         }}
       >
         {description}
       </p>
 
       {/* Divider */}
-      <div
-        style={{
-          height: "1px",
-          background: `linear-gradient(90deg, transparent 0%, ${colors.border.primary} 50%, transparent 100%)`,
-          margin: "20px 0",
-        }}
-      />
+      {features.length > 0 && (
+        <div
+          style={{
+            height: "1px",
+            background:
+              theme === "dark"
+                ? "rgba(255, 255, 255, 0.06)"
+                : "rgba(0, 0, 0, 0.06)",
+            margin: "20px 0",
+          }}
+        />
+      )}
 
-      {/* Features list */}
+      {/* Features list (Plus Jakarta Sans) */}
       {features.length > 0 && (
         <div style={{ marginBottom: "20px" }}>
           {features.map((feature, idx) => (
@@ -155,21 +134,21 @@ export default function GlowingCard({
                 display: "flex",
                 alignItems: "center",
                 marginBottom: "10px",
-                fontSize: "14px",
+                fontSize: "13.5px",
                 color: colors.text.secondary,
+                fontWeight: "500",
+                fontFamily: "var(--font-plus-jakarta)",
                 transition: "all 0.3s ease",
                 transform: isHovered ? "translateX(3px)" : "translateX(0)",
-                transitionDelay: `${idx * 0.05}s`,
               }}
             >
               <span
                 style={{
-                  width: "6px",
-                  height: "6px",
+                  width: "5px",
+                  height: "5px",
                   borderRadius: "50%",
                   background: color,
-                  marginRight: "12px",
-                  boxShadow: isHovered ? `0 0 6px ${color}40` : "none",
+                  marginRight: "10px",
                   transition: "all 0.3s ease",
                 }}
               />
@@ -185,41 +164,28 @@ export default function GlowingCard({
           display: "flex",
           alignItems: "center",
           color: color,
-          fontSize: "14px",
-          fontWeight: "500",
+          fontSize: "13px",
+          fontWeight: "700",
           marginTop: "16px",
+          fontFamily: "var(--font-outfit)",
           transition: "all 0.3s ease",
-          opacity: isHovered ? 1 : 0.7,
+          opacity: isHovered ? 1 : 0.8,
         }}
       >
-        Learn More
-        <span
-          style={{
-            marginLeft: "8px",
-            transition: "transform 0.3s ease",
-            transform: isHovered ? "translateX(3px)" : "translateX(0)",
-            display: "inline-block",
-          }}
-        >
-          →
-        </span>
+        <Link key={slug} href={`/services/${slug}`}>
+          <span>Learn More</span>
+          <span
+            style={{
+              marginLeft: "6px",
+              transition: "transform 0.3s ease",
+              transform: isHovered ? "translateX(3px)" : "translateX(0)",
+              display: "inline-block",
+            }}
+          >
+            →
+          </span>
+        </Link>
       </div>
-
-      {/* Corner decoration */}
-      {isHovered && (
-        <div
-          style={{
-            position: "absolute",
-            top: "16px",
-            right: "16px",
-            width: "40px",
-            height: "40px",
-            borderRadius: "50%",
-            background: `radial-gradient(circle, ${color}20 0%, transparent 70%)`,
-            animation: "pulse 2s ease-in-out infinite",
-          }}
-        />
-      )}
     </div>
   );
 }

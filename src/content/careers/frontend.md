@@ -1,30 +1,31 @@
 ---
-title: "Full Stack Developer"
-location: "Remote or Based in Mogadishu"
+title: "Senior Frontend Developer"
+location: "Remote / Mogadishu"
 type: "Full-time"
 ---
 
-# Full Stack Developer
+# Senior Frontend Developer
 
-Odoros is a technology company based in Mogadishu, Somalia. We are looking for a Full Stack Developer to join our team. In this role, you will be responsible for building scalable web applications with modern technologies.
+Design and implement enterprise-scale solutions for our clients.
 
 ## Responsibilities
 
-- Design, develop, and maintain high-quality web applications using modern technologies.
-- Write clean, efficient, and well-documented code following best practices.
-- Collaborate with cross-functional teams, including designers, product managers, and other developers, to deliver exceptional user experiences.
-- Participate in code reviews, providing constructive feedback to peers while maintaining code quality and standards.
-- Troubleshoot, debug, and upgrade existing systems to ensure optimal performance and reliability.
+- Design technical solutions and architectures
+- Lead implementation projects
+- Provide technical guidance to clients
+- Ensure best practices and standards
 
 ## Requirements
 
-- Contract based work for 6 months renewable with the possibility of extension depending on performance and the needs of the company.
-- Based in Mogadishu, Somalia or remote.
-- At least 5+ years of relevant work experience.
-- Strong proficiency in modern web development technologies, including Java, Springboot, PostgreSQL, Docker, Git, NextJS, and AWS.
+- Strong proficiency in modern frontend development technologies, including React, Redux, TypeScript, and NextJS.
+- Strong experience in Figma or other design tools and should be able to convert Figma designs to code.
 - Experience in collaborating with cross-functional teams, including designers, product managers, and other developers.
 - Strong problem-solving skills and attention to detail.
 - Excellent communication and teamwork abilities.
+- At least 4+ years of relevant work experience.
+- Based in Mogadishu, Somalia or remote.
+- Contract based work for 6 months renewable with the possibility of extension depending on performance and the needs of the company.
+- Strong analytical mindset and problem-solving skills
 
 ## Benefits
 

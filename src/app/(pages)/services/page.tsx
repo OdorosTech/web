@@ -8,6 +8,7 @@ import StatsSection from "@/components/common/StatsSection";
 import CTASection from "@/components/common/CTASection";
 import { getColorScheme } from "@/components/common/ColorUnits";
 import { useTheme } from "@/contexts/ThemeContext";
+import Link from "next/link";
 
 export default function ServicesPage() {
   const [services, setServices] = useState<ContentItem[]>([]);
@@ -52,9 +53,9 @@ export default function ServicesPage() {
   return (
     <PageContainer>
       <PageHeader
-        badge="✨ What We Offer"
-        title="Our Services"
-        description="Comprehensive technology solutions designed to accelerate your digital transformation"
+        // badge="✨ What We Offer"
+        title='Our Services'
+        description='Comprehensive technology solutions designed to accelerate your digital transformation'
       />
 
       {/* Services Grid */}
@@ -79,18 +80,19 @@ export default function ServicesPage() {
             onMouseEnter={() => setHoveredCard(index)}
             onMouseLeave={() => setHoveredCard(null)}
             index={index}
+            slug={service.slug}
           />
         ))}
       </div>
 
       {/* Stats Section */}
-      <StatsSection stats={stats} />
+      {/* <StatsSection stats={stats} /> */}
 
       {/* CTA Section */}
       <CTASection
-        title="Ready to Transform Your Business?"
+        title='Ready to Transform Your Business?'
         description="Let's discuss how our solutions can help you achieve your goals"
-        buttonText="Get Started Today →"
+        buttonText='Get Started Today →'
         onButtonClick={() => {
           console.log("CTA clicked");
         }}

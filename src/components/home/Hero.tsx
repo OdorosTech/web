@@ -49,11 +49,11 @@ const defaultContent: HeroContent = {
   buttons: {
     primary: {
       text: "Get Started",
-      href: "/contact",
+      href: "/services",
     },
     secondary: {
       text: "Contact Us",
-      href: "/services",
+      href: "/contact",
     },
   },
 };
@@ -106,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({
         },
       },
     }),
-    [content]
+    [content],
   );
 
   return (
@@ -138,9 +138,7 @@ export const Hero: React.FC<HeroProps> = ({
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: showVisualization
-              ? "1.2fr 1fr"
-              : "1fr",
+            gridTemplateColumns: showVisualization ? "1.2fr 1fr" : "1fr",
             gap: designTokens.spacing["4xl"],
             alignItems: "center",
           }}
