@@ -21,8 +21,6 @@ export const GlassText: React.FC<GlassTextProps> = ({
   className = "",
   style = {},
 }) => {
-  const isHeading = variant.startsWith("h");
-
   const variantStyles = {
     h1: {
       fontFamily: designTokens.typography.fonts.heading,
@@ -71,12 +69,22 @@ export const GlassText: React.FC<GlassTextProps> = ({
     ...style,
   };
 
-  const Component = isHeading ? variant : "p";
+  // 1. Map variants explicitly to valid text tags to completely avoid generating a <body /> tag
+  const tagMap = {
+    h1: "h1",
+    h2: "h2",
+    h3: "h3",
+    body: "p",
+    caption: "span",
+  } as const;
 
-  return React.createElement(
-    Component,
-    { className, style: baseStyles },
-    children,
+  // 2. Assigning uppercase variable lets us render standard JSX, which Turbopack parses safely
+  const Component = tagMap[variant] || "p";
+
+  return (
+    <Component className={className} style={baseStyles}>
+      {children}
+    </Component>
   );
 };
 
